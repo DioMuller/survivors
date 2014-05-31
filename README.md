@@ -1,0 +1,4 @@
+survivors
+=========
+
+Construct shooting game.
