@@ -1,0 +1,1 @@
+Put all art assets here, before importing.
