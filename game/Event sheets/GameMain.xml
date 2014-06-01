@@ -5,7 +5,10 @@
     <events>
         <comment>Parameters</comment>
         <variable comment="Delay between shots (seconds)" constant="0" name="ShotDelay" sid="5245227575535393" static="0" type="number">0.1</variable>
-        <event-group description="Player controller events." sid="7495863798319145" title="Controller">
+        <variable comment="Shoot angle max randomness." constant="0" name="ShotAngle" sid="4154039900926838" static="0" type="number">2</variable>
+        <variable comment="Shot random Y position max value." constant="0" name="ShotPosition" sid="1149761586430817" static="0" type="number">5</variable>
+        <variable comment="Camera (and character following it) speed." constant="0" name="CameraSpeed" sid="3644210586740942" static="0" type="number">100</variable>
+        <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
                 <event-block sid="5839817289045311">
@@ -25,6 +28,9 @@
                                 <condition id="2" name="Key is down" sid="1063890649566922" type="Keyboard">
                                     <param id="0" name="Key">32 (Space)</param>
                                 </condition>
+                                <condition id="2" name="Mouse button is down" sid="1913539226346655" type="Mouse">
+                                    <param id="0" name="Mouse button">0</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="0" name="Spawn another object" sid="211695786830687" type="Player">
@@ -42,6 +48,17 @@
                                 <action id="-13" name="Set boolean" sid="9323891098787024" type="Player">
                                     <param id="0" name="Instance variable">IsShooting</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="8980907270500427" type="Shot">
+                                    <param id="0" name="Degrees">random(-ShotAngle,ShotAngle + 1)</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="3075802123937552" type="Shot">
+                                    <param id="0" name="Y">Shot.Y + random(-ShotPosition, ShotPosition + 1)</param>
+                                </action>
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="9032026249328699" type="Camera">
+                                    <param id="0" name="Magnitude">2</param>
+                                    <param id="1" name="Duration">0.1</param>
+                                    <param id="2" name="Mode">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -101,7 +118,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Normal and special shot events." sid="2480136762700605" title="Shot events.">
+        <event-group description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events.">
             <sub-events>
                 <comment>Destroys shot outside of screen.</comment>
                 <event-block sid="5269143083626051">
@@ -110,6 +127,97 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="6283014424403295" type="Shot" />
+                    </actions>
+                </event-block>
+                <comment>Creates cartidge when shot is spawned.</comment>
+                <event-block sid="6955227496566467">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="9058608935500594" type="Shot" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="4140254176253545" type="Shot">
+                            <param id="0" name="Object">Cartidge</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="25" name="Play at object" sid="7648320999102931" type="Audio">
+                            <param id="0" name="Audio file">Shoot</param>
+                            <param id="1" name="Loop">0</param>
+                            <param id="2" name="Volume">0</param>
+                            <param id="3" name="Object">Shot</param>
+                            <param id="4" name="Inner angle">360</param>
+                            <param id="5" name="Outer angle">360</param>
+                            <param id="6" name="Outer gain">0</param>
+                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Initializes cartidge effect.</comment>
+                <event-block sid="5678837897234217">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="7874728864907411" type="Cartidge" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="6990774833128229" type="Cartidge">
+                            <param id="0" name="Angle">Cartidge.Angle + 240</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3040574075836724" type="Cartidge">
+                            <param id="0" name="Instance variable">MinY</param>
+                            <param id="1" name="Value">Cartidge.Y + 10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Stops Cartidge if it &quot;hits the ground&quot;.</comment>
+                <event-block sid="5298757296988459">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="6736453651273338" type="Cartidge">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">Cartidge.MinY</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="5426933233049227" type="Cartidge">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="Camera control and events." sid="8555777568681449" title="Camera Events">
+            <sub-events>
+                <comment>Sets camera limit X.</comment>
+                <event-block sid="8000594175719732">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="5439655182113892" type="Camera" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="547220834498555" type="Camera">
+                            <param id="0" name="Instance variable">LimitX</param>
+                            <param id="1" name="Value">LayoutWidth  - (WindowWidth / 2)</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="5700581804717249" type="Camera">
+                            <param id="0" name="Speed">CameraSpeed</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="9271923156136602" type="Player">
+                            <param id="0" name="Speed">CameraSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Stops camera at the limit.</comment>
+                <event-block sid="3373660663949809">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="4167246824406811" type="Camera">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">Camera.LimitX</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="8890725826516254" type="Camera">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="858427136910586" type="Player">
+                            <param id="0" name="Speed">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>

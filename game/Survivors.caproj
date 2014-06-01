@@ -10,7 +10,9 @@
     <unique-id>93cgij8epviy</unique-id>
     <saved-with-version>16800</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
@@ -61,6 +63,9 @@
                 <behavior-type name="BoundToLayout" sid="7565410840118929">
                     <behavior id="bound" />
                 </behavior-type>
+                <behavior-type name="Bullet" sid="9107932557722692">
+                    <behavior id="Bullet" />
+                </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8312123361049688" speed="5">
@@ -91,6 +96,9 @@
         </object-type>
         <object-type name="Camera" sid="1323660039230511">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Camera Limit X position." name="LimitX" sid="7132244384303925" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="ScrollTo" sid="4804903333003637">
                     <behavior id="scrollto" />
@@ -104,6 +112,32 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="ParallaxBG" sid="2664570612329269">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Mouse" sid="9328958754634002">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Cartidge" sid="8727708591988428">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Minimum Y Value." name="MinY" sid="8836456537584393" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="4897251301378957">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3771893614691848" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="5055689259425112">
+            <plugin id="Audio" />
         </object-type>
     </object-folder>
     <families />
@@ -120,8 +154,26 @@
                 <analog-deadzone>25</analog-deadzone>
             </properties>
         </global-instance>
+        <global-instance type="Mouse" uid="7" />
+        <global-instance type="Audio" uid="9">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+                <speed-of-sound>5000</speed-of-sound>
+                <doppler-factor>1</doppler-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder expanded="1" />
+    <sounds-folder expanded="1">
+        <file name="Shoot.ogg" />
+    </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">
