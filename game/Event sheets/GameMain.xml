@@ -260,23 +260,8 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Score, lives, survivors, high score..." sid="7790449752168308" title="Game Data">
+        <event-group description="Score, lives, survivors, high score..." sid="7790449752168308" title="Game Data">
             <sub-events>
-                <comment>Loads High Score, if it exists.</comment>
-                <event-block sid="4967726006181347">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="13021994163587" type="System" />
-                        <condition id="3" name="Local key exists" sid="5245625152880898" type="Storage">
-                            <param id="0" name="Key">&quot;Highscore&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="8308144397575202" type="System">
-                            <param id="0" name="Variable">HighScore</param>
-                            <param id="1" name="Value">Storage.LocalValue(&quot;Highscore&quot;)</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <comment>Creates High Score, if it doesn&apos;t exist.</comment>
                 <event-block sid="8139995756458101">
                     <conditions>
@@ -293,6 +278,21 @@
                         <action id="-9" name="Set value" sid="4233977099093916" type="System">
                             <param id="0" name="Variable">HighScore</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Loads High Score, if it exists.</comment>
+                <event-block sid="4967726006181347">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="13021994163587" type="System" />
+                        <condition id="3" name="Local key exists" sid="5245625152880898" type="Storage">
+                            <param id="0" name="Key">&quot;Highscore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8308144397575202" type="System">
+                            <param id="0" name="Variable">HighScore</param>
+                            <param id="1" name="Value">Storage.LocalValue(&quot;Highscore&quot;)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -313,6 +313,94 @@
                         <action id="0" name="Set local value" sid="8124209730485911" type="Storage">
                             <param id="0" name="Key">&quot;Highscore&quot;</param>
                             <param id="1" name="Value">HighScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="Enemy and enemy type events." sid="5887563344946064" title="Enemies">
+            <sub-events>
+                <comment>Bullets hit enemy, if the enemy is not flashing.</comment>
+                <event-block sid="8975109783393405">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1176632033554533" type="Enemy">
+                            <param id="0" name="Object">Shot</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="3915880233393387" type="Enemy" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5295277808958659" type="Enemy">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="9297251914034745" type="Enemy">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="4025536948330121" type="Enemy">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="7270699215070805" type="Shot" />
+                        <action id="25" name="Play at object" sid="4637034071332631" type="Audio">
+                            <param id="0" name="Audio file">Hit</param>
+                            <param id="1" name="Loop">0</param>
+                            <param id="2" name="Volume">0</param>
+                            <param id="3" name="Object">Enemy</param>
+                            <param id="4" name="Inner angle">360</param>
+                            <param id="5" name="Outer angle">360</param>
+                            <param id="6" name="Outer gain">0</param>
+                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If enemy has no HP, it dies.</comment>
+                <event-block sid="5572807431718024">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2484694745018236" type="Enemy">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7388070203930565" type="Enemy">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="905009486201112" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">Enemy.Points</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="2270971890174927" type="Enemy">
+                            <param id="0" name="Object">EnemyPoints</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3203978515839476" type="EnemyPoints">
+                            <param id="0" name="Text">Enemy.Points</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="1980098892444935" type="Enemy">
+                            <param id="0" name="Instance variable">IsDead</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="8645601271912023" type="Enemy">
+                            <param id="0" name="Animation">&quot;Dead&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="HUD events and updates." sid="7836260230105831" title="HUD">
+            <sub-events>
+                <comment>Updates score and high score on HUD.</comment>
+                <event-block sid="8430060814907466">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="9172965612731808" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="470229447322066" type="HUDScores">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot;  Hi-Score: &quot; &amp; HighScore</param>
                         </action>
                     </actions>
                 </event-block>
