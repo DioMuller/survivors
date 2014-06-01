@@ -14,14 +14,19 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -36,7 +41,7 @@
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
         <prop name="Enable WebGL">On</prop>
-        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
         <prop name="Orientations">Any</prop>
@@ -47,100 +52,183 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-type name="PlayArea" sid="5079889602751996">
+        <object-folder expanded="0" name="System">
+            <object-type name="Audio" sid="5055689259425112">
+                <plugin id="Audio" />
+            </object-type>
+            <object-type name="Gamepad" sid="8858822894838073">
+                <plugin id="gamepad" />
+            </object-type>
+            <object-type name="Keyboard" sid="1201884115244573">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="Mouse" sid="9328958754634002">
+                <plugin id="Mouse" />
+            </object-type>
+            <object-type name="Storage" sid="5243391131129898">
+                <plugin id="WebStorage" />
+            </object-type>
+        </object-folder>
+        <object-folder expanded="0" name="Helper">
+            <object-type name="Camera" sid="1323660039230511">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Camera Limit X position." name="LimitX" sid="7132244384303925" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="ScrollTo" sid="4804903333003637">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="9110205180195801">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8397220632374784" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Limiter" sid="1656010148995917">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="2540565733757227">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-folder expanded="0" name="Player">
+            <object-type name="Cartidge" sid="8727708591988428">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Minimum Y Value." name="MinY" sid="8836456537584393" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Bullet" sid="4897251301378957">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="9409202990077438">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3771893614691848" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Player" sid="7862889593201915">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Is the player shooting?" name="IsShooting" sid="4740520724662285" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="8Direction" sid="3866918799761208">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="9107932557722692">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8312123361049688" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Shootpoint" x="0.5" y="0.25" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Shot" sid="5044471598876147">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="2167067154393765">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5991390823712714" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder expanded="0" name="Background">
+            <object-type name="ParallaxBG" sid="2664570612329269">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="PlayArea" sid="5079889602751996">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-folder expanded="1" name="Enemies">
+            <object-type name="Zombie" sid="253638304120218">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7424236813970581" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="Dead" pingpong="0" repeatcount="1" repeatto="0" sid="304450189470989" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="EnemyPoints" sid="7808716490445923">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="7294327866801869">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="5900018546751558">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="HUDBar" sid="6775223783220185">
             <plugin id="TiledBg" />
             <texture />
         </object-type>
-        <object-type name="Player" sid="7862889593201915">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable comment="Is the player shooting?" name="IsShooting" sid="4740520724662285" type="boolean" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="8Direction" sid="3866918799761208">
-                    <behavior id="EightDir" />
-                </behavior-type>
-                <behavior-type name="BoundToLayout" sid="7565410840118929">
-                    <behavior id="bound" />
-                </behavior-type>
-                <behavior-type name="Bullet" sid="9107932557722692">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8312123361049688" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Shootpoint" x="0.5" y="0.25" />
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Shot" sid="5044471598876147">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Bullet" sid="2167067154393765">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5991390823712714" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Keyboard" sid="1201884115244573">
-            <plugin id="Keyboard" />
-        </object-type>
-        <object-type name="Gamepad" sid="8858822894838073">
-            <plugin id="gamepad" />
-        </object-type>
-        <object-type name="Camera" sid="1323660039230511">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable comment="Camera Limit X position." name="LimitX" sid="7132244384303925" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="ScrollTo" sid="4804903333003637">
-                    <behavior id="scrollto" />
-                </behavior-type>
-                <behavior-type name="Bullet" sid="9110205180195801">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8397220632374784" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="ParallaxBG" sid="2664570612329269">
-            <plugin id="TiledBg" />
+        <object-type name="HUDScores" sid="5367484863801918">
+            <plugin id="Spritefont2" />
             <texture />
-        </object-type>
-        <object-type name="Mouse" sid="9328958754634002">
-            <plugin id="Mouse" />
-        </object-type>
-        <object-type name="Cartidge" sid="8727708591988428">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable comment="Minimum Y Value." name="MinY" sid="8836456537584393" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Bullet" sid="4897251301378957">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3771893614691848" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Audio" sid="5055689259425112">
-            <plugin id="Audio" />
         </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="Enemy" plugin-id="Sprite" sid="2931763109160961">
+            <members>
+                <member>Zombie</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="Enemy Hit Points." name="HP" sid="242367976670545" type="number" />
+                <instance-variable comment="Points given by killing this enemy." name="Points" sid="4069092166973651" type="number" />
+                <instance-variable comment="Is the enemy dead?" name="IsDead" sid="8132535256378617" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="820791141087094">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
     <layout-folder expanded="1">
         <layout>Game.xml</layout>
     </layout-folder>
@@ -170,9 +258,11 @@
                 <doppler-factor>1</doppler-factor>
             </properties>
         </global-instance>
+        <global-instance type="Storage" uid="10" />
     </global-instances>
     <sounds-folder expanded="1">
         <file name="Shoot.ogg" />
+        <file name="Hit.ogg" />
     </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="1">
