@@ -3,11 +3,17 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GameMain</name>
     <events>
+        <comment>Game Data</comment>
+        <variable comment="Player Score." constant="0" name="Score" sid="7486391333038373" static="0" type="number">0</variable>
+        <variable comment="Highest score the player ever had." constant="0" name="HighScore" sid="3298193103443636" static="0" type="number">0</variable>
         <comment>Parameters</comment>
         <variable comment="Delay between shots (seconds)" constant="0" name="ShotDelay" sid="5245227575535393" static="0" type="number">0.1</variable>
         <variable comment="Shoot angle max randomness." constant="0" name="ShotAngle" sid="4154039900926838" static="0" type="number">2</variable>
+        <variable comment="Shoot angle max randomness." constant="0" name="CartidgeAngle" sid="4389483266959345" static="0" type="number">5</variable>
         <variable comment="Shot random Y position max value." constant="0" name="ShotPosition" sid="1149761586430817" static="0" type="number">5</variable>
-        <variable comment="Camera (and character following it) speed." constant="0" name="CameraSpeed" sid="3644210586740942" static="0" type="number">100</variable>
+        <variable comment="Camera (and character following it) speed." constant="0" name="CameraSpeed" sid="3644210586740942" static="0" type="number">50</variable>
+        <comment>Flags</comment>
+        <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
         <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
@@ -118,7 +124,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events.">
+        <event-group collapsed="1" description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
             <sub-events>
                 <comment>Destroys shot outside of screen.</comment>
                 <event-block sid="5269143083626051">
@@ -159,7 +165,7 @@
                     </conditions>
                     <actions>
                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="6990774833128229" type="Cartidge">
-                            <param id="0" name="Angle">Cartidge.Angle + 240</param>
+                            <param id="0" name="Angle">Cartidge.Angle + 250 + random(-CartidgeAngle, CartidgeAngle + 1)</param>
                         </action>
                         <action id="-10" name="Set value" sid="3040574075836724" type="Cartidge">
                             <param id="0" name="Instance variable">MinY</param>
@@ -183,8 +189,40 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Camera control and events." sid="8555777568681449" title="Camera Events">
+        <event-group collapsed="1" description="Camera control and other rendering (layers, effects) events." sid="8555777568681449" title="Camera and Rendering Events">
             <sub-events>
+                <comment>Hides debug layer if flag is set to 0.</comment>
+                <event-block sid="2117358144359866">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9291172673316673" type="System">
+                            <param id="0" name="Variable">ShowDebug</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="413623465911216" type="System">
+                            <param id="0" name="Layer">&quot;Game - Debug&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Shows debug layer if flag is not 0.</comment>
+                <event-block sid="7399432453843184">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4746845298660549" type="System">
+                            <param id="0" name="Variable">ShowDebug</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="7552653586572749" type="System">
+                            <param id="0" name="Layer">&quot;Game - Debug&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Sets camera limit X.</comment>
                 <event-block sid="8000594175719732">
                     <conditions>
@@ -217,6 +255,64 @@
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="858427136910586" type="Player">
                             <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="Score, lives, survivors, high score..." sid="7790449752168308" title="Game Data">
+            <sub-events>
+                <comment>Loads High Score, if it exists.</comment>
+                <event-block sid="4967726006181347">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="13021994163587" type="System" />
+                        <condition id="3" name="Local key exists" sid="5245625152880898" type="Storage">
+                            <param id="0" name="Key">&quot;Highscore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8308144397575202" type="System">
+                            <param id="0" name="Variable">HighScore</param>
+                            <param id="1" name="Value">Storage.LocalValue(&quot;Highscore&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Creates High Score, if it doesn&apos;t exist.</comment>
+                <event-block sid="8139995756458101">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9624404690909285" type="System" />
+                        <condition id="3" inverted="1" name="Local key exists" sid="4151058604950191" type="Storage">
+                            <param id="0" name="Key">&quot;Highscore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="5981591420468967" type="Storage">
+                            <param id="0" name="Key">&quot;Highscore&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4233977099093916" type="System">
+                            <param id="0" name="Variable">HighScore</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Updates High Score if the score is higher.</comment>
+                <event-block sid="4739294620937505">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7170720961527875" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">HighScore</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9208402880650869" type="System">
+                            <param id="0" name="Variable">HighScore</param>
+                            <param id="1" name="Value">Score</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="8124209730485911" type="Storage">
+                            <param id="0" name="Key">&quot;Highscore&quot;</param>
+                            <param id="1" name="Value">HighScore</param>
                         </action>
                     </actions>
                 </event-block>

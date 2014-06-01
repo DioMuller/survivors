@@ -15,13 +15,14 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -59,9 +60,6 @@
             <behaviors>
                 <behavior-type name="8Direction" sid="3866918799761208">
                     <behavior id="EightDir" />
-                </behavior-type>
-                <behavior-type name="BoundToLayout" sid="7565410840118929">
-                    <behavior id="bound" />
                 </behavior-type>
                 <behavior-type name="Bullet" sid="9107932557722692">
                     <behavior id="Bullet" />
@@ -139,6 +137,18 @@
         <object-type name="Audio" sid="5055689259425112">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="Storage" sid="5243391131129898">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="TiledBackground" sid="1656010148995917">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="2540565733757227">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder expanded="1">
@@ -170,6 +180,7 @@
                 <doppler-factor>1</doppler-factor>
             </properties>
         </global-instance>
+        <global-instance type="Storage" uid="10" />
     </global-instances>
     <sounds-folder expanded="1">
         <file name="Shoot.ogg" />
