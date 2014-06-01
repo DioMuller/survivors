@@ -2,5 +2,117 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GameMain</name>
-    <events />
+    <events>
+        <comment>Parameters</comment>
+        <variable comment="Delay between shots (seconds)" constant="0" name="ShotDelay" sid="5245227575535393" static="0" type="number">0.1</variable>
+        <event-group description="Player controller events." sid="7495863798319145" title="Controller">
+            <sub-events>
+                <comment>Shots when the shot key is pressed (considering the delay)</comment>
+                <event-block sid="5839817289045311">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="4893590470292907" type="Player">
+                            <param id="0" name="Instance variable">IsShooting</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="1625541269484604">
+                            <conditions>
+                                <condition id="3" name="Is button down" sid="8732721542079807" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Button">0</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="1063890649566922" type="Keyboard">
+                                    <param id="0" name="Key">32 (Space)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="211695786830687" type="Player">
+                                    <param id="0" name="Object">Shot</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="8740639818903828" type="Player">
+                                    <param id="0" name="Instance variable">IsShooting</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9679698685818208" type="System">
+                                    <param id="0" name="Seconds">ShotDelay</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="9323891098787024" type="Player">
+                                    <param id="0" name="Instance variable">IsShooting</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Remaps controller ( W to Up)</comment>
+                <event-block sid="7010657242711293">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="8260060870164343" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="535255313765059" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Remaps controller (A to Left)</comment>
+                <event-block sid="2372877592491562">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="1756855415641945" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="2817496913014898" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Remaps controller ( S to Down)</comment>
+                <event-block sid="9694203435112949">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="5222997502542291" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="2016963088716626" type="Player">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Remaps controller ( D to Right)</comment>
+                <event-block sid="1583024347804906">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="1812643188587365" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="9434222737208028" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Normal and special shot events." sid="2480136762700605" title="Shot events.">
+            <sub-events>
+                <comment>Destroys shot outside of screen.</comment>
+                <event-block sid="5269143083626051">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="3701865153547944" type="Shot" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6283014424403295" type="Shot" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
 </c2eventsheet>
