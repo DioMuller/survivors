@@ -12,6 +12,9 @@
         <variable comment="Shoot angle max randomness." constant="0" name="CartidgeAngle" sid="4389483266959345" static="0" type="number">5</variable>
         <variable comment="Shot random Y position max value." constant="0" name="ShotPosition" sid="1149761586430817" static="0" type="number">5</variable>
         <variable comment="Camera (and character following it) speed." constant="0" name="CameraSpeed" sid="3644210586740942" static="0" type="number">50</variable>
+        <variable comment="Spitter enemy max rotation." constant="0" name="SpitterMaxRotation" sid="9659925316339352" static="0" type="number">15</variable>
+        <variable comment="Spitter enemy rotation speed." constant="0" name="SpitterRotationSpeed" sid="7670895352815603" static="0" type="number">15</variable>
+        <variable comment="Spitter enemy shoot interval." constant="0" name="SpitterShootInterval" sid="3085334056841616" static="0" type="number">0.5</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
         <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
@@ -318,7 +321,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Enemy and enemy type events." sid="5887563344946064" title="Enemies">
+        <event-group description="Enemy and enemy type events." sid="5887563344946064" title="Enemies">
             <sub-events>
                 <comment>Bullets hit enemy, if the enemy is not flashing.</comment>
                 <event-block sid="8975109783393405">
@@ -389,9 +392,64 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Rotates Spitter</comment>
+                <event-block sid="3948886055302022">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="3733258221896568" type="Spitter" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="4378959737120401" type="Spitter">
+                            <param id="0" name="Instance variable">Rotation</param>
+                            <param id="1" name="Value">Spitter.RotationDifference * SpitterRotationSpeed * dt</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="1684762032277495" type="Spitter">
+                            <param id="0" name="Angle">Spitter.Rotation</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Changes Spitter rotation direction.</comment>
+                <event-block any="1" sid="9710539897879522">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9088095169190081" type="Spitter">
+                            <param id="0" name="Instance variable">Rotation</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">-SpitterMaxRotation</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="7346694833733088" type="Spitter">
+                            <param id="0" name="Instance variable">Rotation</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">SpitterMaxRotation</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="7762857173450791" type="Spitter">
+                            <param id="0" name="Instance variable">RotationDifference</param>
+                            <param id="1" name="Value">Spitter.RotationDifference * -1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Shoots each X seconds.</comment>
+                <event-block sid="9131946075327807">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="4183175403160208" type="Spitter" />
+                        <condition id="-6" name="Every X seconds" sid="9956082927470559" type="System">
+                            <param id="0" name="Interval (seconds)">SpitterShootInterval</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="3109179800303355" type="Spitter">
+                            <param id="0" name="Object">EnemyShoot</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;ShootPoint&quot;</param>
+                        </action>
+                        <action id="-18" name="Rotate clockwise" sid="4009726173115719" type="EnemyShoot">
+                            <param id="0" name="Degrees">180</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="HUD events and updates." sid="7836260230105831" title="HUD">
+        <event-group collapsed="1" description="HUD events and updates." sid="7836260230105831" title="HUD">
             <sub-events>
                 <comment>Updates score and high score on HUD.</comment>
                 <event-block sid="8430060814907466">
