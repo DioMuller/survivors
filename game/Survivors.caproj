@@ -138,7 +138,7 @@
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8312123361049688" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shootpoint" x="0.5" y="0.25" />
+                            <image-point name="Shootpoint" x="0.546875" y="0.166667" />
                         </frame>
                     </animation>
                 </animation-folder>
