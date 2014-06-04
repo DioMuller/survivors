@@ -435,6 +435,9 @@
                         <condition id="-6" name="Every X seconds" sid="9956082927470559" type="System">
                             <param id="0" name="Interval (seconds)">SpitterShootInterval</param>
                         </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5152017438963039" type="Spitter">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="3109179800303355" type="Spitter">
@@ -452,6 +455,9 @@
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="4662574863232132" type="Enemy">
                             <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6653397891709945" type="Enemy">
+                            <param id="0" name="Instance variable">IsDead</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -476,9 +482,54 @@
                         <action id="-9" name="Destroy" sid="3113652418367036" type="EnemyShoot" />
                     </actions>
                 </event-block>
+                <comment>Zombies walk into the direction of the player, when they see it.</comment>
+                <event-block sid="3024095546997047">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="9717835256484006" type="Zombie">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1203730948580071" type="Zombie">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="8949683180908562" type="Zombie">
+                            <param id="0" name="Angle">angle(Zombie.X, Zombie.Y, Player.X, Player.Y)</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="163443212997474" type="Zombie">
+                            <param id="0" name="Speed">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Zombies stop walking, if they are far away from the player.</comment>
+                <event-block any="1" sid="207754742280924">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="2502976348537002" type="Zombie">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="1648930202964351" type="Zombie">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Zombies stop walking when they die!</comment>
+                <event-block any="1" sid="96364981964065">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="9760321247722464" type="Zombie">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="7622274618881968" type="Zombie">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="HUD events and updates." sid="7836260230105831" title="HUD">
+        <event-group collapsed="1" description="HUD events and updates." sid="7836260230105831" title="HUD">
             <sub-events>
                 <comment>Updates score and high score on HUD.</comment>
                 <event-block sid="8430060814907466">
@@ -493,7 +544,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Helper functions." sid="993762252301922" title="Functions">
+        <event-group collapsed="1" description="Helper functions." sid="993762252301922" title="Functions">
             <sub-events>
                 <comment>Function called when the player is hit.</comment>
                 <event-block sid="1701861504165762">
