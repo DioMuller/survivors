@@ -14,7 +14,7 @@
         <variable comment="Camera (and character following it) speed." constant="0" name="CameraSpeed" sid="3644210586740942" static="0" type="number">50</variable>
         <variable comment="Spitter enemy max rotation." constant="0" name="SpitterMaxRotation" sid="9659925316339352" static="0" type="number">15</variable>
         <variable comment="Spitter enemy rotation speed." constant="0" name="SpitterRotationSpeed" sid="7670895352815603" static="0" type="number">15</variable>
-        <variable comment="Spitter enemy shoot interval." constant="0" name="SpitterShootInterval" sid="3085334056841616" static="0" type="number">0.5</variable>
+        <variable comment="Spitter enemy shoot interval." constant="0" name="SpitterShootInterval" sid="3085334056841616" static="0" type="number">2.5</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
         <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
@@ -263,7 +263,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Score, lives, survivors, high score..." sid="7790449752168308" title="Game Data">
+        <event-group collapsed="1" description="Score, lives, survivors, high score..." sid="7790449752168308" title="Game Data">
             <sub-events>
                 <comment>Creates High Score, if it doesn&apos;t exist.</comment>
                 <event-block sid="8139995756458101">
@@ -447,9 +447,38 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>When an enemy hits the player, it loses a survivor.</comment>
+                <event-block sid="3911260323797383">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4662574863232132" type="Enemy">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="6941855666281454" type="Function">
+                            <param id="0" name="Name">&quot;HitPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>When a bullet hits the player, it loses a survivor.</comment>
+                <event-block sid="479710845075131">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7596221113040604" type="EnemyShoot">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="7424646556882032" type="Function">
+                            <param id="0" name="Name">&quot;HitPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="3113652418367036" type="EnemyShoot" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="HUD events and updates." sid="7836260230105831" title="HUD">
+        <event-group description="HUD events and updates." sid="7836260230105831" title="HUD">
             <sub-events>
                 <comment>Updates score and high score on HUD.</comment>
                 <event-block sid="8430060814907466">
@@ -458,7 +487,31 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="470229447322066" type="HUDScores">
-                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot;  Hi-Score: &quot; &amp; HighScore</param>
+                            <param id="0" name="Text">&quot;Survivors:&quot; &amp; Player.Survivors &amp; &quot;  Score: &quot; &amp; Score &amp; &quot;  Hi-Score: &quot; &amp; HighScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Helper functions." sid="993762252301922" title="Functions">
+            <sub-events>
+                <comment>Function called when the player is hit.</comment>
+                <event-block sid="1701861504165762">
+                    <conditions>
+                        <condition id="0" name="On function" sid="3667652965092752" type="Function">
+                            <param id="0" name="Name">&quot;HitPlayer&quot;</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="2603713534004487" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="2360867303945803" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="4517560105199515" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
                         </action>
                     </actions>
                 </event-block>
