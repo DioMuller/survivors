@@ -8,14 +8,15 @@
         <variable comment="Player Score." constant="0" name="Score" sid="7486391333038373" static="0" type="number">0</variable>
         <variable comment="Highest score the player ever had." constant="0" name="HighScore" sid="3298193103443636" static="0" type="number">0</variable>
         <comment>Parameters</comment>
-        <variable comment="Delay between shots (seconds)" constant="0" name="ShotDelay" sid="5245227575535393" static="0" type="number">0.1</variable>
+        <variable comment="Delay between machinegun shots (seconds)" constant="0" name="MachinegunDelay" sid="5245227575535393" static="0" type="number">0.1</variable>
+        <variable comment="Delay between shotgun shots (seconds)" constant="0" name="ShotgunDelay" sid="9847780261608531" static="0" type="number">1</variable>
         <variable comment="Shoot angle max randomness." constant="0" name="ShotAngle" sid="4154039900926838" static="0" type="number">2</variable>
         <variable comment="Shoot angle max randomness." constant="0" name="CartidgeAngle" sid="4389483266959345" static="0" type="number">5</variable>
         <variable comment="Shot random Y position max value." constant="0" name="ShotPosition" sid="1149761586430817" static="0" type="number">5</variable>
         <variable comment="Camera (and character following it) speed." constant="0" name="CameraSpeed" sid="3644210586740942" static="0" type="number">50</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
-        <event-group description="Player controller events." sid="7495863798319145" title="Controller">
+        <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
                 <event-block any="1" sid="5839817289045311">
@@ -103,19 +104,19 @@
                 <comment>Destroys shot outside of screen.</comment>
                 <event-block sid="5269143083626051">
                     <conditions>
-                        <condition id="-3" inverted="1" name="Is on-screen" sid="3701865153547944" type="Shot" />
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="3701865153547944" type="Projectiles" />
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="6283014424403295" type="Shot" />
+                        <action id="-9" name="Destroy" sid="6283014424403295" type="Projectiles" />
                     </actions>
                 </event-block>
                 <comment>Creates cartidge when shot is spawned.</comment>
                 <event-block sid="6955227496566467">
                     <conditions>
-                        <condition id="-18" name="On created" sid="9058608935500594" type="Shot" />
+                        <condition id="-18" name="On created" sid="9058608935500594" type="Projectiles" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="4140254176253545" type="Shot">
+                        <action id="0" name="Spawn another object" sid="4140254176253545" type="Projectiles">
                             <param id="0" name="Object">Cartidge</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
                             <param id="2" name="Image point">0</param>
@@ -124,7 +125,7 @@
                             <param id="0" name="Audio file">Shoot</param>
                             <param id="1" name="Loop">0</param>
                             <param id="2" name="Volume">0</param>
-                            <param id="3" name="Object">Shot</param>
+                            <param id="3" name="Object">Projectiles</param>
                             <param id="4" name="Inner angle">360</param>
                             <param id="5" name="Outer angle">360</param>
                             <param id="6" name="Outer gain">0</param>
@@ -344,6 +345,7 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <comment>First weapon (2 survivors) - Machinegun. Fast, big, weak.</comment>
                         <event-block sid="6558699415719606">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="476645937026618" type="Player">
@@ -352,7 +354,7 @@
                                     <param id="2" name="Value">2</param>
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9353518217425338" type="Player">
-                                    <param id="0" name="Instance variable">IsShooting</param>
+                                    <param id="0" name="Instance variable">IsUsingMachinegun</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -362,14 +364,14 @@
                                     <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="7612343237218698" type="Player">
-                                    <param id="0" name="Instance variable">IsShooting</param>
+                                    <param id="0" name="Instance variable">IsUsingMachinegun</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="528797226800857" type="System">
-                                    <param id="0" name="Seconds">ShotDelay</param>
+                                    <param id="0" name="Seconds">MachinegunDelay</param>
                                 </action>
                                 <action id="-13" name="Set boolean" sid="7256402098409919" type="Player">
-                                    <param id="0" name="Instance variable">IsShooting</param>
+                                    <param id="0" name="Instance variable">IsUsingMachinegun</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                                 <action id="-18" name="Rotate clockwise" sid="6875910793465701" type="Shot">
@@ -377,6 +379,62 @@
                                 </action>
                                 <action id="-2" name="Set Y" sid="9759580865231754" type="Shot">
                                     <param id="0" name="Y">Shot.Y + random(-ShotPosition, ShotPosition + 1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Second weapon (3 survivors) - Shotgun. Slow, small, strong, low reach.</comment>
+                        <event-block sid="3428381689269352">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="392617601206996" type="Player">
+                                    <param id="0" name="Instance variable">Survivors</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6771973847167706" type="Player">
+                                    <param id="0" name="Instance variable">IsUsingShotgun</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="1021450815859162" type="Player">
+                                    <param id="0" name="Object">ShotgunShoot</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="4878347323817208" type="ShotgunShoot">
+                                    <param id="0" name="Degrees">-15</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="2284508124869983" type="ShotgunShoot">
+                                    <param id="0" name="Y">ShotgunShoot.Y + random(-ShotPosition, ShotPosition + 1)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="8426214842728777" type="Player">
+                                    <param id="0" name="Object">ShotgunShoot</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="8322869277269475" type="ShotgunShoot">
+                                    <param id="0" name="Y">ShotgunShoot.Y + random(-ShotPosition, ShotPosition + 1)</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="6301985199025866" type="Player">
+                                    <param id="0" name="Object">ShotgunShoot</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="9936357049069013" type="ShotgunShoot">
+                                    <param id="0" name="Degrees">15</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="6148663833636522" type="ShotgunShoot">
+                                    <param id="0" name="Y">ShotgunShoot.Y + random(-ShotPosition, ShotPosition + 1)</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="6143162848633347" type="Player">
+                                    <param id="0" name="Instance variable">IsUsingShotgun</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7388880334709897" type="System">
+                                    <param id="0" name="Seconds">ShotgunDelay</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="746251942776887" type="Player">
+                                    <param id="0" name="Instance variable">IsUsingShotgun</param>
+                                    <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                         </event-block>
