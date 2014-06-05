@@ -184,6 +184,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -232,6 +233,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -280,6 +282,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -328,6 +331,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -376,6 +380,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -424,6 +429,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -472,6 +478,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -520,6 +527,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -568,6 +576,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -616,6 +625,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -664,6 +674,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -712,6 +723,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -760,6 +772,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -808,6 +821,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -856,6 +870,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -904,6 +919,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -952,6 +968,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1000,6 +1017,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1048,6 +1066,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1096,6 +1115,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1144,6 +1164,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1192,6 +1213,7 @@
                         <HP>3</HP>
                         <Points>10</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1291,6 +1313,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1323,6 +1346,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1355,6 +1379,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1387,6 +1412,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1419,6 +1445,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1451,6 +1478,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1483,6 +1511,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1515,6 +1544,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1547,6 +1577,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1579,6 +1610,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1611,6 +1643,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1643,6 +1676,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1675,6 +1709,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1707,6 +1742,7 @@
                         <HP>5</HP>
                         <Points>25</Points>
                         <IsDead>false</IsDead>
+                        <KnockbackModifier>0</KnockbackModifier>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1788,7 +1824,7 @@
                     </properties>
                     <instance-variables>
                         <IsShooting>false</IsShooting>
-                        <Survivors>2</Survivors>
+                        <Survivors>5</Survivors>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">

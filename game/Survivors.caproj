@@ -288,6 +288,7 @@
                 <instance-variable comment="Enemy Hit Points." name="HP" sid="242367976670545" type="number" />
                 <instance-variable comment="Points given by killing this enemy." name="Points" sid="4069092166973651" type="number" />
                 <instance-variable comment="Is the enemy dead?" name="IsDead" sid="8132535256378617" type="boolean" />
+                <instance-variable comment="Enemy Knockback Modifier." name="KnockbackModifier" sid="3586176642492124" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Flash" sid="820791141087094">
@@ -301,6 +302,7 @@
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>GameMain.xml</event-sheet>
+        <event-sheet>Enemies.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="3" />

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Enemies</name>
+    <events>
+        <event-group collapsed="1" description="Generic Enemy events." sid="8776089849661433" title="General">
+            <sub-events>
+                <comment>Bullets hit enemy, if the enemy is not flashing.</comment>
+                <event-block sid="8975109783393405">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1176632033554533" type="Enemy">
+                            <param id="0" name="Object">Shot</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="3915880233393387" type="Enemy" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5295277808958659" type="Enemy">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="9297251914034745" type="Enemy">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="4025536948330121" type="Enemy">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="7270699215070805" type="Shot" />
+                        <action id="25" name="Play at object" sid="4637034071332631" type="Audio">
+                            <param id="0" name="Audio file">Hit</param>
+                            <param id="1" name="Loop">0</param>
+                            <param id="2" name="Volume">0</param>
+                            <param id="3" name="Object">Enemy</param>
+                            <param id="4" name="Inner angle">360</param>
+                            <param id="5" name="Outer angle">360</param>
+                            <param id="6" name="Outer gain">0</param>
+                            <param id="7" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="2439327411011145" type="Enemy">
+                            <param id="0" name="X">Enemy.X - ((Shot.X &lt;Enemy.X ?  -1 : 1) * Enemy.KnockbackModifier)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If enemy has no HP, it dies.</comment>
+                <event-block sid="5572807431718024">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2484694745018236" type="Enemy">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="7388070203930565" type="Enemy">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="905009486201112" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">Enemy.Points</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="2270971890174927" type="Enemy">
+                            <param id="0" name="Object">EnemyPoints</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3203978515839476" type="EnemyPoints">
+                            <param id="0" name="Text">Enemy.Points</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="1980098892444935" type="Enemy">
+                            <param id="0" name="Instance variable">IsDead</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="8645601271912023" type="Enemy">
+                            <param id="0" name="Animation">&quot;Dead&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>When an enemy hits the player, it loses a survivor.</comment>
+                <event-block sid="3911260323797383">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4662574863232132" type="Enemy">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6653397891709945" type="Enemy">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="6941855666281454" type="Function">
+                            <param id="0" name="Name">&quot;HitPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>When a bullet hits the player, it loses a survivor.</comment>
+                <event-block sid="479710845075131">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7596221113040604" type="EnemyShoot">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="7424646556882032" type="Function">
+                            <param id="0" name="Name">&quot;HitPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="3113652418367036" type="EnemyShoot" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="Zombie enemy events." sid="6695857086812331" title="Zombie">
+            <sub-events>
+                <comment>Zombies walk into the direction of the player, when they see it.</comment>
+                <event-block sid="3024095546997047">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="9717835256484006" type="Zombie">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1203730948580071" type="Zombie">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="8949683180908562" type="Zombie">
+                            <param id="0" name="Angle">angle(Zombie.X, Zombie.Y, Player.X, Player.Y)</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="163443212997474" type="Zombie">
+                            <param id="0" name="Speed">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Zombies stop walking, if they are far away from the player.</comment>
+                <event-block any="1" sid="207754742280924">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="2502976348537002" type="Zombie">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="1648930202964351" type="Zombie">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Zombies stop walking when they die!</comment>
+                <event-block any="1" sid="96364981964065">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="9760321247722464" type="Zombie">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="7622274618881968" type="Zombie">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="The spitter is an enemy with decent resistence, but no movement. It rotates in a predefined arc, and spits a projectile at fixed time span." sid="8254302292856625" title="Spitter">
+            <sub-events>
+                <comment>Spitter Parameters</comment>
+                <variable comment="Spitter enemy max rotation." constant="0" name="SpitterMaxRotation" sid="7438655777303651" static="0" type="number">15</variable>
+                <variable comment="Spitter enemy rotation speed." constant="0" name="SpitterRotationSpeed" sid="4846060863886897" static="0" type="number">15</variable>
+                <variable comment="Spitter enemy shoot interval." constant="0" name="SpitterShootInterval" sid="374344415292235" static="0" type="number">2.5</variable>
+                <comment>Rotates Spitter</comment>
+                <event-block sid="3948886055302022">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="3733258221896568" type="Spitter" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="4378959737120401" type="Spitter">
+                            <param id="0" name="Instance variable">Rotation</param>
+                            <param id="1" name="Value">Spitter.RotationDifference * SpitterRotationSpeed * dt</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="1684762032277495" type="Spitter">
+                            <param id="0" name="Angle">Spitter.Rotation</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Changes Spitter rotation direction.</comment>
+                <event-block sid="9710539897879522">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3714321598287296" type="Spitter">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="2052620211375063">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3098562355480654" type="Spitter">
+                                    <param id="0" name="Instance variable">Rotation</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">-SpitterMaxRotation</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="984753110421728" type="Spitter">
+                                    <param id="0" name="Instance variable">Rotation</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">SpitterMaxRotation</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="7762857173450791" type="Spitter">
+                                    <param id="0" name="Instance variable">RotationDifference</param>
+                                    <param id="1" name="Value">Spitter.RotationDifference * -1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Shoots each X seconds.</comment>
+                <event-block sid="9131946075327807">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="4183175403160208" type="Spitter" />
+                        <condition id="-6" name="Every X seconds" sid="9956082927470559" type="System">
+                            <param id="0" name="Interval (seconds)">SpitterShootInterval</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5152017438963039" type="Spitter">
+                            <param id="0" name="Instance variable">IsDead</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="3109179800303355" type="Spitter">
+                            <param id="0" name="Object">EnemyShoot</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;ShootPoint&quot;</param>
+                        </action>
+                        <action id="-18" name="Rotate clockwise" sid="4009726173115719" type="EnemyShoot">
+                            <param id="0" name="Degrees">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
