@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>93cgij8epviy</unique-id>
-    <saved-with-version>16800</saved-with-version>
+    <saved-with-version>17100</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
@@ -221,20 +221,12 @@
                     <instance-variable comment="Rotation Difference." name="RotationDifference" sid="3428082628875021" type="number" />
                 </instance-variables>
                 <animation-folder expanded="1">
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7368731136614802" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="ShootPoint" x="0.03125" y="0.46875" />
-                        </frame>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7368731136614802" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="1" loop="0" name="Dead" pingpong="0" repeatcount="1" repeatto="0" sid="3223938360217589" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                            </collision-poly>
-                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -336,25 +328,20 @@
         <object-type name="Divider" sid="7889896447972994">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7598959850791928" speed="5">
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7598959850791928" speed="3">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
                 <animation framecount="1" loop="0" name="Dead" pingpong="0" repeatcount="1" repeatto="0" sid="8526033771641945" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="1" y="0" />
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                        </collision-poly>
-                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="Spawn" sid="9485462285581923">
             <plugin id="Sprite" />
             <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="952027658032936" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="952027658032936" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
                 <animation framecount="1" loop="0" name="Dead" pingpong="0" repeatcount="1" repeatto="0" sid="4541352035596916" speed="5">
@@ -397,6 +384,22 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
+        </family>
+        <family name="GameObjects" plugin-id="Sprite" sid="8826393813247918">
+            <members>
+                <member>Bomber</member>
+                <member>Camera</member>
+                <member>Cartidge</member>
+                <member>Divider</member>
+                <member>EnemyShoot</member>
+                <member>Explosion</member>
+                <member>Player</member>
+                <member>Shot</member>
+                <member>ShotgunShoot</member>
+                <member>Spawn</member>
+                <member>Spitter</member>
+                <member>Zombie</member>
+            </members>
         </family>
     </families>
     <layout-folder expanded="1">

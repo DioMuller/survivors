@@ -14,6 +14,7 @@
         <variable comment="Shoot angle max randomness." constant="0" name="CartidgeAngle" sid="4389483266959345" static="0" type="number">5</variable>
         <variable comment="Shot random Y position max value." constant="0" name="ShotPosition" sid="1149761586430817" static="0" type="number">5</variable>
         <variable comment="Camera (and character following it) speed." constant="0" name="CameraSpeed" sid="3644210586740942" static="0" type="number">50</variable>
+        <variable comment="Dramatic pause time (pauses the game when enemy dies)" constant="0" name="DramaticPauseTime" sid="8911201919267045" static="0" type="number">0.1</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
         <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
@@ -99,7 +100,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
+        <event-group description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
             <sub-events>
                 <comment>Destroys shot outside of screen.</comment>
                 <event-block sid="5269143083626051">
@@ -305,7 +306,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Helper functions." sid="993762252301922" title="Functions">
+        <event-group description="Helper functions." sid="993762252301922" title="Functions">
             <sub-events>
                 <comment>Function called when the player is hit.</comment>
                 <event-block sid="1701861504165762">
@@ -327,8 +328,8 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>Shooting Function.</comment>
-                <event-block sid="9792452049605657">
+                <comment>Shooting function. The number of shoots depends on the number of survivors.</comment>
+                <event-block collapsed="1" sid="9792452049605657">
                     <conditions>
                         <condition id="0" name="On function" sid="2001374501340578" type="Function">
                             <param id="0" name="Name">&quot;Shoot&quot;</param>
@@ -336,8 +337,8 @@
                     </conditions>
                     <actions>
                         <action behavior="ScrollTo" id="0" name="Shake" sid="282503789204637" type="Camera">
-                            <param id="0" name="Magnitude">(Player.Survivors - 1) * 2</param>
-                            <param id="1" name="Duration">0.1 * (Player.Survivors - 1) </param>
+                            <param id="0" name="Magnitude">3</param>
+                            <param id="1" name="Duration">0.2</param>
                             <param id="2" name="Mode">1</param>
                         </action>
                     </actions>
@@ -436,6 +437,26 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <comment>Does a small pause for each time it is called</comment>
+                <event-block sid="9239405073329248">
+                    <conditions>
+                        <condition id="0" name="On function" sid="5335692551040839" type="Function">
+                            <param id="0" name="Name">&quot;DramaticPause&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Set object time scale" sid="1725170025088916" type="System">
+                            <param id="0" name="Object">GameObjects</param>
+                            <param id="1" name="Time scale">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="9967028372862463" type="System">
+                            <param id="0" name="Seconds">DramaticPauseTime</param>
+                        </action>
+                        <action id="-15" name="Restore object time scale" sid="8912685418361027" type="System">
+                            <param id="0" name="Object">GameObjects</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Enemies</name>
     <events>
-        <event-group collapsed="1" description="Generic Enemy events." sid="8776089849661433" title="General">
+        <event-group description="Generic Enemy events." sid="8776089849661433" title="General">
             <sub-events>
                 <comment>Bullets hit enemy, if the enemy is not flashing.</comment>
                 <event-block sid="8975109783393405">
@@ -74,6 +74,10 @@
                         <action id="4" name="Set animation" sid="8645601271912023" type="Enemy">
                             <param id="0" name="Animation">&quot;Dead&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="6726278125004679" type="Function">
+                            <param id="0" name="Name">&quot;DramaticPause&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -277,9 +281,6 @@
                             <param id="0" name="Instance variable">Rotation</param>
                             <param id="1" name="Value">Spitter.RotationDifference * SpitterRotationSpeed * dt</param>
                         </action>
-                        <action id="-8" name="Set angle" sid="1684762032277495" type="Spitter">
-                            <param id="0" name="Angle">Spitter.Rotation</param>
-                        </action>
                     </actions>
                 </event-block>
                 <comment>Changes Spitter rotation direction.</comment>
@@ -321,7 +322,7 @@
                             <param id="2" name="Image point">&quot;ShootPoint&quot;</param>
                         </action>
                         <action id="-18" name="Rotate clockwise" sid="4009726173115719" type="EnemyShoot">
-                            <param id="0" name="Degrees">180</param>
+                            <param id="0" name="Degrees">180 + Spitter.Rotation</param>
                         </action>
                     </actions>
                 </event-block>
@@ -385,30 +386,40 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="The divider creates new small enemies when it is hit." sid="2112679300905023" title="Divider">
+        <event-group collapsed="1" description="The divider creates new small enemies when it is hit." sid="2112679300905023" title="Divider">
             <sub-events>
                 <comment>Creates small spawns when is hit.</comment>
                 <event-block sid="8389031813490296">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="1705746412267073" type="Divider">
-                            <param id="0" name="Object">Projectiles</param>
-                        </condition>
-                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="3128228448733796" type="Divider" />
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3766289227489239" type="Divider">
+                        <condition id="-8" name="Is boolean instance variable set" sid="3766289227489239" type="Divider">
                             <param id="0" name="Instance variable">IsDead</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="310031718104793" type="Divider">
-                            <param id="0" name="Object">Spawn</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="3155231792891784" type="Spawn">
-                            <param id="0" name="X">Divider.X + random(-60,61)</param>
-                            <param id="1" name="Y">Divider.Y +  random(-60,61)</param>
-                        </action>
+                        <action id="-9" name="Destroy" sid="2792734923381787" type="Divider" />
                     </actions>
+                    <sub-events>
+                        <event-block sid="8014072933763184">
+                            <conditions>
+                                <condition id="-10" name="For" sid="2538047898274582" type="System">
+                                    <param id="0" name="Name">&quot;Counter&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="6892083321129141" type="Divider">
+                                    <param id="0" name="Object">Spawn</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="3944195795317175" type="Spawn">
+                                    <param id="0" name="X">Divider.X + random(-60,61)</param>
+                                    <param id="1" name="Y">Divider.Y +  random(-60,61)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
