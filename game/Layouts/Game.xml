@@ -192,6 +192,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -245,6 +246,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -298,6 +300,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -351,6 +354,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -404,6 +408,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -457,6 +462,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -510,6 +516,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -563,6 +570,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -616,6 +624,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -669,6 +678,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -722,6 +732,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -775,6 +786,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -828,6 +840,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -881,6 +894,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -934,6 +948,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -987,6 +1002,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1040,6 +1056,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1093,6 +1110,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1146,6 +1164,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1199,6 +1218,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1252,6 +1272,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1305,6 +1326,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1409,6 +1431,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1464,6 +1487,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1519,6 +1543,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1574,6 +1599,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1629,6 +1655,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1684,6 +1711,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1739,6 +1767,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1794,6 +1823,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1849,6 +1879,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1904,6 +1935,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1959,6 +1991,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -2014,6 +2047,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -2162,6 +2196,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2215,6 +2250,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2314,6 +2350,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2373,6 +2410,31 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Turret" uid="72">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <CurrentFrame>0</CurrentFrame>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>169.899505615</x>
+                        <y>208.729644775</y>
+                        <z>0</z>
+                        <width>24</width>
+                        <height>19</height>
+                        <depth>0</depth>
+                        <hotspotX>0.791666687</hotspotX>
+                        <hotspotY>1</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -2398,7 +2460,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Survivors>5</Survivors>
+                        <Survivors>2</Survivors>
                         <IsUsingMachinegun>false</IsUsingMachinegun>
                         <IsUsingShotgun>false</IsUsingShotgun>
                     </instance-variables>
@@ -2406,8 +2468,8 @@
                         <behavior-instance type="8Direction">
                             <properties>
                                 <max-speed>200</max-speed>
-                                <acceleration>600</acceleration>
-                                <deceleration>500</deceleration>
+                                <acceleration>300</acceleration>
+                                <deceleration>300</deceleration>
                                 <directions>4 directions</directions>
                                 <set-angle>No</set-angle>
                                 <default-controls>Yes</default-controls>
@@ -2420,7 +2482,7 @@
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
-                                <set-angle>Yes</set-angle>
+                                <set-angle>No</set-angle>
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -2457,6 +2519,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2510,6 +2573,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2563,6 +2627,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2616,6 +2681,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2669,6 +2735,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee></AudioOnSee>
+                        <AudioOnDead></AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2722,6 +2789,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2775,6 +2843,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2828,6 +2897,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2881,6 +2951,7 @@
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
                         <AudioOnSee>Zombie_See</AudioOnSee>
+                        <AudioOnDead>Zombie_Dead</AudioOnDead>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2911,6 +2982,94 @@
                         <z>0</z>
                         <width>16</width>
                         <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Driver" uid="68">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>58.462482452</x>
+                        <y>244.091827393</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TurretShooter" uid="69">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>105.031448364</x>
+                        <y>298.732849121</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Shotguner" uid="70">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>144.770523071</x>
+                        <y>241.607971191</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Granedier" uid="71">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>138.990386963</x>
+                        <y>342.366455078</y>
+                        <z>0</z>
+                        <width>64</width>
+                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

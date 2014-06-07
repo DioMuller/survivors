@@ -105,7 +105,7 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Player">
+        <object-folder expanded="0" name="Friendly">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -122,32 +122,6 @@
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3771893614691848" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="1" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Player" sid="7862889593201915">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable comment="Number of survivors." name="Survivors" sid="5281314384537901" type="number" />
-                    <instance-variable comment="Is the player shooting with the machine gun?" name="IsUsingMachinegun" sid="4740520724662285" type="boolean" />
-                    <instance-variable comment="Is the player using the shotgun?" name="IsUsingShotgun" sid="4203515014440433" type="boolean" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="8Direction" sid="3866918799761208">
-                        <behavior id="EightDir" />
-                    </behavior-type>
-                    <behavior-type name="Bullet" sid="9107932557722692">
-                        <behavior id="Bullet" />
-                    </behavior-type>
-                    <behavior-type name="Flash" sid="1990513544486151">
-                        <behavior id="Flash" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder expanded="1">
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8312123361049688" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shootpoint" x="0.546875" y="0.166667" />
-                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -175,6 +149,15 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Survivor" sid="3321618024031327">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950943228950004" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder expanded="0" name="Background">
             <object-type name="ParallaxBG" sid="2664570612329269">
@@ -186,7 +169,7 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Enemies">
+        <object-folder expanded="0" name="Enemies">
             <object-type name="Zombie" sid="253638304120218">
                 <plugin id="Sprite" />
                 <animation-folder expanded="1">
@@ -327,17 +310,90 @@
                 <texture />
             </object-type>
         </object-folder>
+        <object-folder expanded="1" name="Player">
+            <object-type name="Player" sid="7862889593201915">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Number of survivors." name="Survivors" sid="5281314384537901" type="number" />
+                    <instance-variable comment="Is the player shooting with the machine gun?" name="IsUsingMachinegun" sid="4740520724662285" type="boolean" />
+                    <instance-variable comment="Is the player using the shotgun?" name="IsUsingShotgun" sid="4203515014440433" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="8Direction" sid="3866918799761208">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="9107932557722692">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="1990513544486151">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8312123361049688" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Shootpoint" x="-0.09375" y="3.25" />
+                            <image-point name="TurretOrigin" x="0.25" y="0.3125" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Shootpoint" x="0.484375" y="0.145833" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Shootpoint" x="0.484375" y="0.145833" />
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Shootpoint" x="0.484375" y="0.145833" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Driver" sid="7333282798962906">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7753571941296795" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TurretShooter" sid="9182418675544656">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4007840736854166" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Granedier" sid="2682756242192615">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950493853860814" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Shotguner" sid="5037422759148387">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8781484180333511" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Turret" sid="133445941834983">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Current turret frame." name="CurrentFrame" sid="7707344064021979" type="number" />
+                </instance-variables>
+                <animation-folder expanded="1">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7040101888905711" speed="5">
+                        <frame duration="1" hotspotX="0.791667" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.791667" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="Function" sid="8807024520685956">
             <plugin id="Function" />
-        </object-type>
-        <object-type name="Survivor" sid="3321618024031327">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950943228950004" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
     </object-folder>
     <families>
@@ -358,6 +414,7 @@
                 <instance-variable comment="Enemy current angle of motion" name="AngleOfMotion" sid="1520984682098767" type="number" />
                 <instance-variable comment="Is the enemy seeking the player?" name="SeekingPlayer" sid="5851999531072304" type="boolean" />
                 <instance-variable comment="Audio file played when seeing the player." name="AudioOnSee" sid="8319834728031582" type="string" />
+                <instance-variable comment="Audio played when enemy dies." name="AudioOnDead" sid="8841701810540273" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Flash" sid="820791141087094">
@@ -371,7 +428,7 @@
                 </behavior-type>
             </behaviors>
         </family>
-        <family name="Projectiles" plugin-id="Sprite" sid="307295951801195">
+        <family name="PlayerProjectile" plugin-id="Sprite" sid="307295951801195">
             <members>
                 <member>Shot</member>
                 <member>ShotgunShoot</member>
@@ -385,20 +442,33 @@
                 </behavior-type>
             </behaviors>
         </family>
-        <family name="GameObjects" plugin-id="Sprite" sid="8826393813247918">
+        <family name="GameObject" plugin-id="Sprite" sid="8826393813247918">
             <members>
                 <member>Bomber</member>
                 <member>Camera</member>
                 <member>Cartidge</member>
                 <member>Divider</member>
+                <member>Driver</member>
                 <member>EnemyShoot</member>
                 <member>Explosion</member>
+                <member>Granedier</member>
                 <member>Player</member>
                 <member>Shot</member>
+                <member>Shotguner</member>
                 <member>ShotgunShoot</member>
                 <member>Spawn</member>
                 <member>Spitter</member>
+                <member>Survivor</member>
+                <member>TurretShooter</member>
                 <member>Zombie</member>
+            </members>
+        </family>
+        <family name="PlayerPart" plugin-id="Sprite" sid="107277397582833">
+            <members>
+                <member>Driver</member>
+                <member>Granedier</member>
+                <member>Shotguner</member>
+                <member>TurretShooter</member>
             </members>
         </family>
     </families>
@@ -443,6 +513,7 @@
         <file name="Survivor_Pickup.ogg" />
         <file name="Zombie_See.ogg" />
         <file name="Survivor_Dead.ogg" />
+        <file name="Zombie_Dead.ogg" />
     </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="1">

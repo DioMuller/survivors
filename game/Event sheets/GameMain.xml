@@ -105,26 +105,27 @@
                 <comment>Destroys shot outside of screen.</comment>
                 <event-block sid="5269143083626051">
                     <conditions>
-                        <condition id="-3" inverted="1" name="Is on-screen" sid="3701865153547944" type="Projectiles" />
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="3701865153547944" type="PlayerProjectile" />
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="6283014424403295" type="Projectiles" />
+                        <action id="-9" name="Destroy" sid="6283014424403295" type="PlayerProjectile" />
                     </actions>
                 </event-block>
                 <comment>Creates cartidge and play sound when shot is spawned.</comment>
                 <event-block sid="6955227496566467">
                     <conditions>
-                        <condition id="-18" name="On created" sid="9058608935500594" type="Projectiles" />
+                        <condition id="-18" name="On created" sid="9058608935500594" type="PlayerProjectile" />
+                        <condition id="-3" name="Is on-screen" sid="2347355524230811" type="PlayerProjectile" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="4140254176253545" type="Projectiles">
+                        <action id="0" name="Spawn another object" sid="4140254176253545" type="PlayerProjectile">
                             <param id="0" name="Object">Cartidge</param>
                             <param id="1" name="Layer">&quot;Game&quot;</param>
                             <param id="2" name="Image point">0</param>
                         </action>
                         <action id="7" name="Play (by name)" sid="7648320999102931" type="Audio">
                             <param id="0" name="Folder">0</param>
-                            <param id="1" name="Audio file name">Projectiles.SoundFile</param>
+                            <param id="1" name="Audio file name">PlayerProjectile.SoundFile</param>
                             <param id="3" name="Loop">0</param>
                             <param id="4" name="Volume">0</param>
                             <param id="2" name="Tag (optional)">&quot;&quot;</param>
@@ -306,7 +307,208 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Helper functions." sid="993762252301922" title="Functions">
+        <event-group collapsed="1" description="Survivor pickup events." sid="3814513092485815" title="Survivor">
+            <sub-events>
+                <comment>Survivor pickup.</comment>
+                <event-block sid="7520839760438962">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7509513715816406" type="Survivor">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9126653180978348" type="Survivor" />
+                        <action id="-11" name="Add to" sid="1999314990661007" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="5295743108729386" type="Audio">
+                            <param id="0" name="Audio file">Survivor_Pickup</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If you hit a survivor, it turns into a zombie.</comment>
+                <event-block sid="9780605234240704">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6315859163289056" type="Survivor">
+                            <param id="0" name="Object">PlayerProjectile</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="5445126940658809" type="Survivor">
+                            <param id="0" name="Object">Zombie</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="4885063741230538" type="Survivor" />
+                        <action id="0" name="Play" sid="6013478412062169" type="Audio">
+                            <param id="0" name="Audio file">Survivor_Dead</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Player events." sid="1027178941590517" title="Player">
+            <sub-events>
+                <comment>If the player has no survivors left, restart the game.</comment>
+                <event-block sid="8955538910618842">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3704301008060957" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="4439566014908862" type="System" />
+                        <action id="-26" name="Restart layout" sid="749214528516938" type="System" />
+                    </actions>
+                </event-block>
+                <comment>Update PlayerParts.</comment>
+                <event-block sid="779260838852693">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="2725214486993686" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="452218990661751" type="PlayerPart">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="3531268382753146" type="Turret">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">&quot;TurretOrigin&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If there is at least one survivor, show the driver.</comment>
+                <event-block sid="2964161055486045">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3694261441169888" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="4716046628482285" type="Driver">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If there is not at least one survivor, hide the driver.</comment>
+                <event-block sid="9293445393435874">
+                    <conditions>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="6844126469407044" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="3253978551100158" type="Driver">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If there is at least two survivors, show the turret shooter.</comment>
+                <event-block sid="5409316078801071">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3654543196144153" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="8058385087730136" type="TurretShooter">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If there is not at least two survivors, hide the turret shooter.</comment>
+                <event-block sid="7219282659406816">
+                    <conditions>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="2742572485034575" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="9493823120255784" type="TurretShooter">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If there is at least three survivors, show the shotgunner.</comment>
+                <event-block sid="3384596516607763">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6185121492805488" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="4407788172119352" type="Shotguner">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If there is not at least three survivors, hide the shotgunner.</comment>
+                <event-block sid="2908739416151731">
+                    <conditions>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="8644661875396867" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="2713158077377827" type="Shotguner">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If there is at least four survivors, show the granadier.</comment>
+                <event-block sid="3396442104390124">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7995664440389098" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="7390313955054442" type="Granedier">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If there is not at least four survivors, hide the granadier.</comment>
+                <event-block sid="4163630986401375">
+                    <conditions>
+                        <condition id="-7" inverted="1" name="Compare instance variable" sid="4596172367871845" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="5432899532405478" type="Granedier">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Helper functions." sid="993762252301922" title="Functions">
             <sub-events>
                 <comment>Function called when the player is hit.</comment>
                 <event-block sid="1701861504165762">
@@ -329,7 +531,7 @@
                     </actions>
                 </event-block>
                 <comment>Shooting function. The number of shoots depends on the number of survivors.</comment>
-                <event-block collapsed="1" sid="9792452049605657">
+                <event-block sid="9792452049605657">
                     <conditions>
                         <condition id="0" name="On function" sid="2001374501340578" type="Function">
                             <param id="0" name="Name">&quot;Shoot&quot;</param>
@@ -377,6 +579,13 @@
                                 </action>
                                 <action id="-2" name="Set Y" sid="9759580865231754" type="Shot">
                                     <param id="0" name="Y">Shot.Y + random(-ShotPosition, ShotPosition + 1)</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="7185394934593382" type="Turret">
+                                    <param id="0" name="Frame number">Turret.CurrentFrame</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="1131167485152914" type="Turret">
+                                    <param id="0" name="Instance variable">CurrentFrame</param>
+                                    <param id="1" name="Value">(Turret.CurrentFrame + 1)%2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -447,61 +656,14 @@
                     </conditions>
                     <actions>
                         <action id="-14" name="Set object time scale" sid="1725170025088916" type="System">
-                            <param id="0" name="Object">GameObjects</param>
+                            <param id="0" name="Object">GameObject</param>
                             <param id="1" name="Time scale">0</param>
                         </action>
                         <action id="-16" name="Wait" sid="9967028372862463" type="System">
                             <param id="0" name="Seconds">DramaticPauseTime</param>
                         </action>
                         <action id="-15" name="Restore object time scale" sid="8912685418361027" type="System">
-                            <param id="0" name="Object">GameObjects</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group collapsed="1" description="Survivor pickup events." sid="3814513092485815" title="Survivor">
-            <sub-events>
-                <comment>Survivor pickup.</comment>
-                <event-block sid="7520839760438962">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="7509513715816406" type="Survivor">
-                            <param id="0" name="Object">Player</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="9126653180978348" type="Survivor" />
-                        <action id="-11" name="Add to" sid="1999314990661007" type="Player">
-                            <param id="0" name="Instance variable">Survivors</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="0" name="Play" sid="5295743108729386" type="Audio">
-                            <param id="0" name="Audio file">Survivor_Pickup</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>If you hit a survivor, it turns into a zombie.</comment>
-                <event-block sid="9780605234240704">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="6315859163289056" type="Survivor">
-                            <param id="0" name="Object">Projectiles</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="5445126940658809" type="Survivor">
-                            <param id="0" name="Object">Zombie</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="4885063741230538" type="Survivor" />
-                        <action id="0" name="Play" sid="6013478412062169" type="Audio">
-                            <param id="0" name="Audio file">Survivor_Dead</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                            <param id="0" name="Object">GameObject</param>
                         </action>
                     </actions>
                 </event-block>

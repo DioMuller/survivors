@@ -9,7 +9,7 @@
                 <event-block sid="8975109783393405">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="1176632033554533" type="Enemy">
-                            <param id="0" name="Object">Projectiles</param>
+                            <param id="0" name="Object">PlayerProjectile</param>
                         </condition>
                         <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="3915880233393387" type="Enemy" />
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5295277808958659" type="Enemy">
@@ -26,7 +26,7 @@
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
                             <param id="2" name="Duration">0.5</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="7270699215070805" type="Projectiles" />
+                        <action id="-9" name="Destroy" sid="7270699215070805" type="PlayerProjectile" />
                         <action id="25" name="Play at object" sid="4637034071332631" type="Audio">
                             <param id="0" name="Audio file">Hit</param>
                             <param id="1" name="Loop">0</param>
@@ -38,7 +38,7 @@
                             <param id="7" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                         <action id="-1" name="Set X" sid="2439327411011145" type="Enemy">
-                            <param id="0" name="X">Enemy.X - ((Projectiles.X &lt;Enemy.X ?  -1 : 1) * Enemy.KnockbackModifier)</param>
+                            <param id="0" name="X">Enemy.X - ((PlayerProjectile.X &lt;Enemy.X ?  -1 : 1) * Enemy.KnockbackModifier)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -78,6 +78,13 @@
                         <action id="0" name="Call function" sid="6726278125004679" type="Function">
                             <param id="0" name="Name">&quot;DramaticPause&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="7" name="Play (by name)" sid="7682195545882836" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">Enemy.AudioOnDead</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -164,6 +171,9 @@
                     <conditions>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2176179865332374" type="Enemy">
                             <param id="0" name="Instance variable">SeekingPlayer</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2947216448031468" type="Enemy">
+                            <param id="0" name="Instance variable">IsDead</param>
                         </condition>
                         <condition behavior="Sight" id="0" name="Has LOS to object" sid="9289286725473043" type="Enemy">
                             <param id="0" name="Object">Player</param>
