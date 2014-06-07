@@ -186,20 +186,9 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Enemies">
+        <object-folder expanded="1" name="Enemies">
             <object-type name="Zombie" sid="253638304120218">
                 <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable comment="Zombie motion angle." name="MotionAngle" sid="3028522704772735" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Bullet" sid="6999162734551857">
-                        <behavior id="Bullet" />
-                    </behavior-type>
-                    <behavior-type name="LineOfSight" sid="5717054333358176">
-                        <behavior id="LOS" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7424236813970581" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -252,14 +241,6 @@
             </object-type>
             <object-type name="Bomber" sid="3603639705459796">
                 <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Bullet" sid="7834868707204554">
-                        <behavior id="Bullet" />
-                    </behavior-type>
-                    <behavior-type name="LineOfSight" sid="6881770086125232">
-                        <behavior id="LOS" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1626520919227184" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -299,6 +280,30 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Divider" sid="7889896447972994">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7598959850791928" speed="3">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Dead" pingpong="0" repeatcount="1" repeatto="0" sid="8526033771641945" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Spawn" sid="9485462285581923">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="952027658032936" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="Dead" pingpong="0" repeatcount="1" repeatto="0" sid="4541352035596916" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder expanded="0" name="HUD">
             <object-type name="EnemyPoints" sid="7808716490445923">
@@ -325,30 +330,6 @@
         <object-type name="Function" sid="8807024520685956">
             <plugin id="Function" />
         </object-type>
-        <object-type name="Divider" sid="7889896447972994">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7598959850791928" speed="3">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-                <animation framecount="1" loop="0" name="Dead" pingpong="0" repeatcount="1" repeatto="0" sid="8526033771641945" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Spawn" sid="9485462285581923">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="952027658032936" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-                <animation framecount="1" loop="0" name="Dead" pingpong="0" repeatcount="1" repeatto="0" sid="4541352035596916" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
     </object-folder>
     <families>
         <family name="Enemy" plugin-id="Sprite" sid="2931763109160961">
@@ -364,10 +345,18 @@
                 <instance-variable comment="Points given by killing this enemy." name="Points" sid="4069092166973651" type="number" />
                 <instance-variable comment="Is the enemy dead?" name="IsDead" sid="8132535256378617" type="boolean" />
                 <instance-variable comment="Enemy Knockback Modifier." name="KnockbackModifier" sid="3586176642492124" type="number" />
+                <instance-variable comment="Enemy speed." name="Speed" sid="342136518257344" type="number" />
+                <instance-variable comment="Enemy current angle of motion" name="AngleOfMotion" sid="1520984682098767" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Flash" sid="820791141087094">
                     <behavior id="Flash" />
+                </behavior-type>
+                <behavior-type name="Walking" sid="2084457546938751">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Sight" sid="8187753729250768">
+                    <behavior id="LOS" />
                 </behavior-type>
             </behaviors>
         </family>

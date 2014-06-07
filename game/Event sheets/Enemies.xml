@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Enemies</name>
     <events>
-        <event-group description="Generic Enemy events." sid="8776089849661433" title="General">
+        <event-group collapsed="1" description="Generic Enemy events." sid="8776089849661433" title="General">
             <sub-events>
                 <comment>Bullets hit enemy, if the enemy is not flashing.</comment>
                 <event-block sid="8975109783393405">
@@ -159,109 +159,106 @@
                         </action>
                     </actions>
                 </event-block>
-            </sub-events>
-        </event-group>
-        <event-group collapsed="1" description="The zombie is a slow, dumb and weak enemy. It walks in the direction of the player, when the player enters his field of view." sid="6695857086812331" title="Zombie">
-            <sub-events>
-                <comment>Zombies walk into the direction of the player, when they see it.</comment>
+                <comment>Enemies walk into the direction of the player, when they see it.</comment>
                 <event-block sid="3024095546997047">
                     <conditions>
-                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="9717835256484006" type="Zombie">
+                        <condition behavior="Sight" id="0" name="Has LOS to object" sid="9717835256484006" type="Enemy">
                             <param id="0" name="Object">Player</param>
                         </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1203730948580071" type="Zombie">
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1203730948580071" type="Enemy">
                             <param id="0" name="Instance variable">IsDead</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="8949683180908562" type="Zombie">
-                            <param id="0" name="Instance variable">MotionAngle</param>
-                            <param id="1" name="Value">angle(Zombie.X, Zombie.Y, Player.X, Player.Y)</param>
+                        <action id="-10" name="Set value" sid="8949683180908562" type="Enemy">
+                            <param id="0" name="Instance variable">AngleOfMotion</param>
+                            <param id="1" name="Value">angle(Enemy.X, Enemy.Y, Player.X, Player.Y)</param>
                         </action>
-                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5951589794466949" type="Zombie">
-                            <param id="0" name="Angle">Zombie.MotionAngle</param>
+                        <action behavior="Walking" id="3" name="Set angle of motion" sid="5951589794466949" type="Enemy">
+                            <param id="0" name="Angle">Enemy.AngleOfMotion</param>
                         </action>
-                        <action behavior="Bullet" id="0" name="Set speed" sid="163443212997474" type="Zombie">
-                            <param id="0" name="Speed">50</param>
+                        <action behavior="Walking" id="0" name="Set speed" sid="163443212997474" type="Enemy">
+                            <param id="0" name="Speed">Enemy.Speed</param>
                         </action>
-                        <action id="4" name="Set animation" sid="4820927019234223" type="Zombie">
+                        <action id="4" name="Set animation" sid="4820927019234223" type="Enemy">
                             <param id="0" name="Animation">&quot;Walking&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="-10" name="Set value" sid="4028915715063849" type="Zombie">
-                            <param id="0" name="Instance variable">MotionAngle</param>
-                            <param id="1" name="Value">abs(Zombie.MotionAngle)</param>
+                        <action id="-10" name="Set value" sid="4028915715063849" type="Enemy">
+                            <param id="0" name="Instance variable">AngleOfMotion</param>
+                            <param id="1" name="Value">abs(Enemy.AngleOfMotion)</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <comment>Mirrors zombie if ABSOLUTE motion angle is less or equal to 90 degrees.</comment>
+                        <comment>Mirrors enemy if ABSOLUTE motion angle is less or equal to 90 degrees.</comment>
                         <event-block sid="6956047811585145">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="9785931184798862" type="Zombie">
-                                    <param id="0" name="Instance variable">MotionAngle</param>
+                                <condition id="-7" name="Compare instance variable" sid="9785931184798862" type="Enemy">
+                                    <param id="0" name="Instance variable">AngleOfMotion</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">90</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="7" name="Set mirrored" sid="9891260367108389" type="Zombie">
+                                <action id="7" name="Set mirrored" sid="9891260367108389" type="Enemy">
                                     <param id="0" name="State">0</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <comment>Unmirrors zombie if ABSOLUTE motion angle is greater than 90 degrees.</comment>
+                        <comment>Unmirrors enemy if ABSOLUTE motion angle is greater than 90 degrees.</comment>
                         <event-block any="1" sid="3230712675474436">
                             <conditions>
-                                <condition id="-7" inverted="1" name="Compare instance variable" sid="9432987129951854" type="Zombie">
-                                    <param id="0" name="Instance variable">MotionAngle</param>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="9432987129951854" type="Enemy">
+                                    <param id="0" name="Instance variable">AngleOfMotion</param>
                                     <param id="1" name="Comparison">3</param>
                                     <param id="2" name="Value">90</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="7" name="Set mirrored" sid="6955784527130186" type="Zombie">
+                                <action id="7" name="Set mirrored" sid="6955784527130186" type="Enemy">
                                     <param id="0" name="State">1</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>Zombies stop walking, if they are far away from the player.</comment>
+                <comment>Enemies stop walking, if they are far away from the player.</comment>
                 <event-block any="1" sid="207754742280924">
                     <conditions>
-                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="2502976348537002" type="Zombie">
+                        <condition behavior="Sight" id="0" inverted="1" name="Has LOS to object" sid="1453970388996071" type="Enemy">
                             <param id="0" name="Object">Player</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Bullet" id="0" name="Set speed" sid="1648930202964351" type="Zombie">
-                            <param id="0" name="Speed">0</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="4126117008934332" type="Zombie">
+                        <action id="4" name="Set animation" sid="4126117008934332" type="Enemy">
                             <param id="0" name="Animation">&quot;Default&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action behavior="Walking" id="0" name="Set speed" sid="8251980680486967" type="Enemy">
+                            <param id="0" name="Speed">0</param>
+                        </action>
                     </actions>
                 </event-block>
-                <comment>Zombies stop walking when they die!</comment>
+                <comment>Enemies stop walking when they die!</comment>
                 <event-block any="1" sid="96364981964065">
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="9760321247722464" type="Zombie">
+                        <condition id="-8" name="Is boolean instance variable set" sid="9760321247722464" type="Enemy">
                             <param id="0" name="Instance variable">IsDead</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Bullet" id="0" name="Set speed" sid="7622274618881968" type="Zombie">
-                            <param id="0" name="Speed">0</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="499728990915455" type="Zombie">
+                        <action id="4" name="Set animation" sid="499728990915455" type="Enemy">
                             <param id="0" name="Animation">&quot;Dead&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Walking" id="0" name="Set speed" sid="6440240088982923" type="Enemy">
+                            <param id="0" name="Speed">0</param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="The zombie is a slow, dumb and weak enemy. It walks in the direction of the player, when the player enters his field of view." sid="6695857086812331" title="Zombie" />
         <event-group collapsed="1" description="The spitter is an enemy with decent resistence, but no movement. It rotates in a predefined arc, and spits a projectile at fixed time span." sid="8254302292856625" title="Spitter">
             <sub-events>
                 <comment>Spitter Parameters</comment>
@@ -330,50 +327,15 @@
         </event-group>
         <event-group collapsed="1" description="The bomber is a suicidal enemy, with low health. If it is hit, or hits the player, it explodes." sid="2677203614364159" title="Bomber">
             <sub-events>
-                <comment>Bomber desperatly runs into the direction of the player, when they see it.</comment>
-                <event-block sid="3024095546997047">
-                    <conditions>
-                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="9717835256484006" type="Bomber">
-                            <param id="0" name="Object">Player</param>
-                        </condition>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1203730948580071" type="Bomber">
-                            <param id="0" name="Instance variable">IsDead</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="8949683180908562" type="Bomber">
-                            <param id="0" name="Angle">angle(Bomber.X, Bomber.Y, Player.X, Player.Y)</param>
-                        </action>
-                        <action behavior="Bullet" id="0" name="Set speed" sid="163443212997474" type="Bomber">
-                            <param id="0" name="Speed">400</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>They stop running, if they are far away from the player.</comment>
-                <event-block any="1" sid="207754742280924">
-                    <conditions>
-                        <condition behavior="LineOfSight" id="0" inverted="1" name="Has LOS to object" sid="2502976348537002" type="Bomber">
-                            <param id="0" name="Object">Player</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Bullet" id="0" name="Set speed" sid="1648930202964351" type="Bomber">
-                            <param id="0" name="Speed">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>If the bomber is dead, he stops... AND EXPLODES.</comment>
+                <comment>If the bomber is dead, it stops... AND EXPLODES.</comment>
                 <event-block any="1" sid="96364981964065">
                     <conditions>
                         <condition id="-8" name="Is boolean instance variable set" sid="9760321247722464" type="Bomber">
                             <param id="0" name="Instance variable">IsDead</param>
                         </condition>
-                        <condition id="0" name="On collision with another object" sid="6197885809120417" type="Bomber">
-                            <param id="0" name="Object">Player</param>
-                        </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Bullet" id="0" name="Set speed" sid="7622274618881968" type="Bomber">
+                        <action behavior="Walking" id="0" name="Set speed" sid="7622274618881968" type="Bomber">
                             <param id="0" name="Speed">0</param>
                         </action>
                         <action id="0" name="Spawn another object" sid="377477285170951" type="Bomber">
@@ -382,6 +344,25 @@
                             <param id="2" name="Image point">0</param>
                         </action>
                         <action id="-9" name="Destroy" sid="8819231919506054" type="Bomber" />
+                    </actions>
+                </event-block>
+                <comment>If the bomber collides with the player, it stops... AND EXPLODES.</comment>
+                <event-block any="1" sid="3321468114969791">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="2638854114638788" type="Bomber">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Walking" id="0" name="Set speed" sid="2152295984835175" type="Bomber">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="2811097261514602" type="Bomber">
+                            <param id="0" name="Object">Explosion</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2514081231690014" type="Bomber" />
                     </actions>
                 </event-block>
             </sub-events>
