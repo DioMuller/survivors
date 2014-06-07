@@ -4,7 +4,7 @@
     <sid>4498659529715963</sid>
     <event-sheet>GameMain</event-sheet>
     <size>
-        <width>3708</width>
+        <width>5708</width>
         <height>480</height>
     </size>
     <margins>
@@ -15,7 +15,7 @@
     <layers>
         <layer name="Background - Parallax" sid="6332602292377685">
             <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
+            <background-color>204,0,0</background-color>
             <transparent>0</transparent>
             <parallax>
                 <x>1</x>
@@ -36,10 +36,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>1</x>
-                        <y>2</y>
+                        <y>2.049804688</y>
                         <z>0</z>
-                        <width>3708</width>
-                        <height>140.099609375</height>
+                        <width>5721</width>
+                        <height>140</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -75,7 +75,7 @@
                         <x>0</x>
                         <y>140</y>
                         <z>0</z>
-                        <width>3708</width>
+                        <width>5721</width>
                         <height>340</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -419,8 +419,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>937</x>
-                        <y>370</y>
+                        <x>1926</x>
+                        <y>385</y>
                         <z>0</z>
                         <width>16</width>
                         <height>24</height>
@@ -470,8 +470,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>749</x>
-                        <y>198</y>
+                        <x>2095</x>
+                        <y>229</y>
                         <z>0</z>
                         <width>16</width>
                         <height>24</height>
@@ -980,8 +980,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1353</x>
-                        <y>320</y>
+                        <x>2149</x>
+                        <y>375</y>
                         <z>0</z>
                         <width>16</width>
                         <height>24</height>
@@ -1031,8 +1031,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1538</x>
-                        <y>350</y>
+                        <x>2250</x>
+                        <y>201</y>
                         <z>0</z>
                         <width>16</width>
                         <height>24</height>
@@ -2123,8 +2123,8 @@
                         <width>16</width>
                         <height>16</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>12.75</hotspotX>
+                        <hotspotY>8.125</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -2268,11 +2268,11 @@
                         <x>617</x>
                         <y>-97</y>
                         <z>0</z>
-                        <width>16</width>
-                        <height>16</height>
+                        <width>21</width>
+                        <height>14</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.571428597</hotspotX>
+                        <hotspotY>0.571428597</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -2492,8 +2492,8 @@
                         <width>16</width>
                         <height>16</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>12.75</hotspotX>
+                        <hotspotY>8.125</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -2543,8 +2543,8 @@
                         <width>16</width>
                         <height>16</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>12.75</hotspotX>
+                        <hotspotY>8.125</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -2593,6 +2593,210 @@
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
+                        <depth>0</depth>
+                        <hotspotX>12.75</hotspotX>
+                        <hotspotY>8.125</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Zombie" uid="63">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <HP>2</HP>
+                        <Points>10</Points>
+                        <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
+                        <Speed>50</Speed>
+                        <AngleOfMotion>0</AngleOfMotion>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Walking">
+                            <properties>
+                                <speed>50</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sight">
+                            <properties>
+                                <obstacles>Solids</obstacles>
+                                <range>300</range>
+                                <cone-of-view>360</cone-of-view>
+                                <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2355</x>
+                        <y>364</y>
+                        <z>0</z>
+                        <width>16</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Zombie" uid="64">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <HP>2</HP>
+                        <Points>10</Points>
+                        <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
+                        <Speed>50</Speed>
+                        <AngleOfMotion>0</AngleOfMotion>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Walking">
+                            <properties>
+                                <speed>50</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sight">
+                            <properties>
+                                <obstacles>Solids</obstacles>
+                                <range>300</range>
+                                <cone-of-view>360</cone-of-view>
+                                <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2823</x>
+                        <y>210</y>
+                        <z>0</z>
+                        <width>16</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Zombie" uid="65">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <HP>2</HP>
+                        <Points>10</Points>
+                        <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
+                        <Speed>50</Speed>
+                        <AngleOfMotion>0</AngleOfMotion>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Walking">
+                            <properties>
+                                <speed>50</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sight">
+                            <properties>
+                                <obstacles>Solids</obstacles>
+                                <range>300</range>
+                                <cone-of-view>360</cone-of-view>
+                                <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>2924</x>
+                        <y>385</y>
+                        <z>0</z>
+                        <width>16</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Zombie" uid="66">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <HP>2</HP>
+                        <Points>10</Points>
+                        <IsDead>false</IsDead>
+                        <KnockbackModifier>10</KnockbackModifier>
+                        <Speed>50</Speed>
+                        <AngleOfMotion>0</AngleOfMotion>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Walking">
+                            <properties>
+                                <speed>50</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>No</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sight">
+                            <properties>
+                                <obstacles>Solids</obstacles>
+                                <range>300</range>
+                                <cone-of-view>360</cone-of-view>
+                                <use-collision-cells>Yes</use-collision-cells>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>3289</x>
+                        <y>228</y>
+                        <z>0</z>
+                        <width>16</width>
+                        <height>24</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -2677,7 +2881,7 @@
                         <x>0</x>
                         <y>124</y>
                         <z>0</z>
-                        <width>3798</width>
+                        <width>5734</width>
                         <height>16</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2704,7 +2908,7 @@
                         <x>0</x>
                         <y>480</y>
                         <z>0</z>
-                        <width>3798</width>
+                        <width>5738</width>
                         <height>16</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2741,7 +2945,7 @@
                         <x>0</x>
                         <y>430</y>
                         <z>0</z>
-                        <width>3708</width>
+                        <width>5738</width>
                         <height>132</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
