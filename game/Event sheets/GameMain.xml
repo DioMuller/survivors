@@ -205,7 +205,7 @@
                     <actions>
                         <action id="-10" name="Set value" sid="547220834498555" type="Camera">
                             <param id="0" name="Instance variable">LimitX</param>
-                            <param id="1" name="Value">LayoutWidth  - (WindowWidth / 2)</param>
+                            <param id="1" name="Value">LayoutWidth</param>
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="5700581804717249" type="Camera">
                             <param id="0" name="Speed">CameraSpeed</param>
@@ -232,7 +232,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-group description="Player positioning events." sid="31258596315872" title="Player Positioning">
+                <event-group collapsed="1" description="Player positioning events." sid="31258596315872" title="Player Positioning">
                     <sub-events>
                         <comment>Limits player X position to the minimum screen X position.</comment>
                         <event-block sid="4919757083946753">

@@ -442,5 +442,21 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="The boss is a big octopus that runs to the player base." sid="468630034715306" title="Boss">
+            <sub-events>
+                <comment>The boss parts will follow the boss.</comment>
+                <event-block sid="8224511202679279">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="8104877399018981" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="1037051472342176" type="BossParts">
+                            <param id="0" name="Object">Boss</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
