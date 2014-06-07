@@ -100,7 +100,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
+        <event-group collapsed="1" description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
             <sub-events>
                 <comment>Destroys shot outside of screen.</comment>
                 <event-block sid="5269143083626051">
@@ -306,7 +306,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Helper functions." sid="993762252301922" title="Functions">
+        <event-group collapsed="1" description="Helper functions." sid="993762252301922" title="Functions">
             <sub-events>
                 <comment>Function called when the player is hit.</comment>
                 <event-block sid="1701861504165762">
@@ -455,6 +455,53 @@
                         </action>
                         <action id="-15" name="Restore object time scale" sid="8912685418361027" type="System">
                             <param id="0" name="Object">GameObjects</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group collapsed="1" description="Survivor pickup events." sid="3814513092485815" title="Survivor">
+            <sub-events>
+                <comment>Survivor pickup.</comment>
+                <event-block sid="7520839760438962">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7509513715816406" type="Survivor">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9126653180978348" type="Survivor" />
+                        <action id="-11" name="Add to" sid="1999314990661007" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Play" sid="5295743108729386" type="Audio">
+                            <param id="0" name="Audio file">Survivor_Pickup</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If you hit a survivor, it turns into a zombie.</comment>
+                <event-block sid="9780605234240704">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6315859163289056" type="Survivor">
+                            <param id="0" name="Object">Projectiles</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="5445126940658809" type="Survivor">
+                            <param id="0" name="Object">Zombie</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="4885063741230538" type="Survivor" />
+                        <action id="0" name="Play" sid="6013478412062169" type="Audio">
+                            <param id="0" name="Audio file">Survivor_Dead</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>

@@ -159,11 +159,35 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Enemies stop walking when they die!</comment>
+                <event-block sid="9842749277155371">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2176179865332374" type="Enemy">
+                            <param id="0" name="Instance variable">SeekingPlayer</param>
+                        </condition>
+                        <condition behavior="Sight" id="0" name="Has LOS to object" sid="9289286725473043" type="Enemy">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Play (by name)" sid="238947925472128" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">Enemy.AudioOnSee</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="5039518573886307" type="Enemy">
+                            <param id="0" name="Instance variable">SeekingPlayer</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Enemies walk into the direction of the player, when they see it.</comment>
                 <event-block sid="3024095546997047">
                     <conditions>
-                        <condition behavior="Sight" id="0" name="Has LOS to object" sid="9717835256484006" type="Enemy">
-                            <param id="0" name="Object">Player</param>
+                        <condition id="-8" name="Is boolean instance variable set" sid="8417718988664226" type="Enemy">
+                            <param id="0" name="Instance variable">SeekingPlayer</param>
                         </condition>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1203730948580071" type="Enemy">
                             <param id="0" name="Instance variable">IsDead</param>
@@ -236,6 +260,10 @@
                         </action>
                         <action behavior="Walking" id="0" name="Set speed" sid="8251980680486967" type="Enemy">
                             <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="4819761126366049" type="Enemy">
+                            <param id="0" name="Instance variable">SeekingPlayer</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>

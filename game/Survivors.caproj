@@ -330,6 +330,15 @@
         <object-type name="Function" sid="8807024520685956">
             <plugin id="Function" />
         </object-type>
+        <object-type name="Survivor" sid="3321618024031327">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950943228950004" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Enemy" plugin-id="Sprite" sid="2931763109160961">
@@ -347,6 +356,8 @@
                 <instance-variable comment="Enemy Knockback Modifier." name="KnockbackModifier" sid="3586176642492124" type="number" />
                 <instance-variable comment="Enemy speed." name="Speed" sid="342136518257344" type="number" />
                 <instance-variable comment="Enemy current angle of motion" name="AngleOfMotion" sid="1520984682098767" type="number" />
+                <instance-variable comment="Is the enemy seeking the player?" name="SeekingPlayer" sid="5851999531072304" type="boolean" />
+                <instance-variable comment="Audio file played when seeing the player." name="AudioOnSee" sid="8319834728031582" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Flash" sid="820791141087094">
@@ -429,6 +440,9 @@
         <file name="Hit.ogg" />
         <file name="Explosion.ogg" />
         <file name="Shotgun.ogg" />
+        <file name="Survivor_Pickup.ogg" />
+        <file name="Zombie_See.ogg" />
+        <file name="Survivor_Dead.ogg" />
     </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="1">

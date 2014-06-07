@@ -190,6 +190,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -241,6 +243,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -292,6 +296,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -343,6 +349,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -394,6 +402,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -445,6 +455,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -496,6 +508,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -547,6 +561,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -598,6 +614,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -649,6 +667,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -700,6 +720,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -751,6 +773,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -802,6 +826,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -853,6 +879,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -904,6 +932,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -955,6 +985,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1006,6 +1038,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1057,6 +1091,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1108,6 +1144,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1159,6 +1197,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1210,6 +1250,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1261,6 +1303,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1363,6 +1407,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1416,6 +1462,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1469,6 +1517,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1522,6 +1572,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1575,6 +1627,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1628,6 +1682,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1681,6 +1737,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1734,6 +1792,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1787,6 +1847,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1840,6 +1902,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1893,6 +1957,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -1946,6 +2012,8 @@
                         <KnockbackModifier>0</KnockbackModifier>
                         <Speed>0</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -2092,6 +2160,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>400</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2143,6 +2213,8 @@
                         <KnockbackModifier>1</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2240,6 +2312,8 @@
                         <KnockbackModifier>20</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2273,6 +2347,28 @@
                         <depth>0</depth>
                         <hotspotX>0.571428597</hotspotX>
                         <hotspotY>0.571428597</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Survivor" uid="67">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>855</x>
+                        <y>293</y>
+                        <z>0</z>
+                        <width>16</width>
+                        <height>24</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -2359,6 +2455,8 @@
                         <KnockbackModifier>1</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2410,6 +2508,8 @@
                         <KnockbackModifier>1</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2461,6 +2561,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>400</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2512,6 +2614,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>400</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2563,6 +2667,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>400</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee></AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2614,6 +2720,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2665,6 +2773,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2716,6 +2826,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2767,6 +2879,8 @@
                         <KnockbackModifier>10</KnockbackModifier>
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
+                        <SeekingPlayer>false</SeekingPlayer>
+                        <AudioOnSee>Zombie_See</AudioOnSee>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
