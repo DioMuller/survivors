@@ -310,7 +310,7 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Player">
+        <object-folder expanded="0" name="Player">
             <object-type name="Player" sid="7862889593201915">
                 <plugin id="Sprite" />
                 <instance-variables>

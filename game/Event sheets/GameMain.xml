@@ -163,7 +163,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Camera control and other rendering (layers, effects) events." sid="8555777568681449" title="Camera and Rendering Events">
+        <event-group description="Camera control, player placement on screen and and other rendering (layers, effects) events." sid="8555777568681449" title="Camera, Positioning and Rendering Events">
             <sub-events>
                 <comment>Hides debug layer if flag is set to 0.</comment>
                 <event-block sid="2117358144359866">
@@ -232,6 +232,38 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-group description="Player positioning events." sid="31258596315872" title="Player Positioning">
+                    <sub-events>
+                        <comment>Limits player X position to the minimum screen X position.</comment>
+                        <event-block sid="4919757083946753">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="8374351068520703" type="Player">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="X co-ordinate">ViewportLeft(&quot;Game&quot;) + Player.Width</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="8407080807855817" type="Player">
+                                    <param id="0" name="X">ViewportLeft(&quot;Game&quot;) + Player.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Limits player X position to the maximum screen X position.</comment>
+                        <event-block sid="6538463063075924">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="93315604865813" type="Player">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="X co-ordinate">ViewportRight(&quot;Game&quot;) - Player.Width</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="5911146327369124" type="Player">
+                                    <param id="0" name="X">ViewportRight(&quot;Game&quot;) - Player.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
         <event-group collapsed="1" description="Score, lives, survivors, high score..." sid="7790449752168308" title="Game Data">
@@ -354,7 +386,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Player events." sid="1027178941590517" title="Player">
+        <event-group collapsed="1" description="Player events." sid="1027178941590517" title="Player">
             <sub-events>
                 <comment>If the player has no survivors left, restart the game.</comment>
                 <event-block sid="8955538910618842">
@@ -386,129 +418,133 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>If there is at least one survivor, show the driver.</comment>
-                <event-block sid="2964161055486045">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="3694261441169888" type="Player">
-                            <param id="0" name="Instance variable">Survivors</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="4716046628482285" type="Driver">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>If there is not at least one survivor, hide the driver.</comment>
-                <event-block sid="9293445393435874">
-                    <conditions>
-                        <condition id="-7" inverted="1" name="Compare instance variable" sid="6844126469407044" type="Player">
-                            <param id="0" name="Instance variable">Survivors</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="3253978551100158" type="Driver">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>If there is at least two survivors, show the turret shooter.</comment>
-                <event-block sid="5409316078801071">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="3654543196144153" type="Player">
-                            <param id="0" name="Instance variable">Survivors</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="8058385087730136" type="TurretShooter">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>If there is not at least two survivors, hide the turret shooter.</comment>
-                <event-block sid="7219282659406816">
-                    <conditions>
-                        <condition id="-7" inverted="1" name="Compare instance variable" sid="2742572485034575" type="Player">
-                            <param id="0" name="Instance variable">Survivors</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="9493823120255784" type="TurretShooter">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>If there is at least three survivors, show the shotgunner.</comment>
-                <event-block sid="3384596516607763">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="6185121492805488" type="Player">
-                            <param id="0" name="Instance variable">Survivors</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">3</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="4407788172119352" type="Shotguner">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>If there is not at least three survivors, hide the shotgunner.</comment>
-                <event-block sid="2908739416151731">
-                    <conditions>
-                        <condition id="-7" inverted="1" name="Compare instance variable" sid="8644661875396867" type="Player">
-                            <param id="0" name="Instance variable">Survivors</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">3</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="2713158077377827" type="Shotguner">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>If there is at least four survivors, show the granadier.</comment>
-                <event-block sid="3396442104390124">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="7995664440389098" type="Player">
-                            <param id="0" name="Instance variable">Survivors</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">4</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="7390313955054442" type="Granedier">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>If there is not at least four survivors, hide the granadier.</comment>
-                <event-block sid="4163630986401375">
-                    <conditions>
-                        <condition id="-7" inverted="1" name="Compare instance variable" sid="4596172367871845" type="Player">
-                            <param id="0" name="Instance variable">Survivors</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">4</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="5432899532405478" type="Granedier">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
+                <event-group collapsed="1" description="Survivor Visibility events." sid="9882614110388473" title="Survivor Visibility">
+                    <sub-events>
+                        <comment>If there is at least one survivor, show the driver.</comment>
+                        <event-block sid="2964161055486045">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3694261441169888" type="Player">
+                                    <param id="0" name="Instance variable">Survivors</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="4716046628482285" type="Driver">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>If there is not at least one survivor, hide the driver.</comment>
+                        <event-block sid="9293445393435874">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="6844126469407044" type="Player">
+                                    <param id="0" name="Instance variable">Survivors</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="3253978551100158" type="Driver">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>If there is at least two survivors, show the turret shooter.</comment>
+                        <event-block sid="5409316078801071">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3654543196144153" type="Player">
+                                    <param id="0" name="Instance variable">Survivors</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="8058385087730136" type="TurretShooter">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>If there is not at least two survivors, hide the turret shooter.</comment>
+                        <event-block sid="7219282659406816">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="2742572485034575" type="Player">
+                                    <param id="0" name="Instance variable">Survivors</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="9493823120255784" type="TurretShooter">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>If there is at least three survivors, show the shotgunner.</comment>
+                        <event-block sid="3384596516607763">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6185121492805488" type="Player">
+                                    <param id="0" name="Instance variable">Survivors</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="4407788172119352" type="Shotguner">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>If there is not at least three survivors, hide the shotgunner.</comment>
+                        <event-block sid="2908739416151731">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="8644661875396867" type="Player">
+                                    <param id="0" name="Instance variable">Survivors</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="2713158077377827" type="Shotguner">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>If there is at least four survivors, show the granadier.</comment>
+                        <event-block sid="3396442104390124">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7995664440389098" type="Player">
+                                    <param id="0" name="Instance variable">Survivors</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="7390313955054442" type="Granedier">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>If there is not at least four survivors, hide the granadier.</comment>
+                        <event-block sid="4163630986401375">
+                            <conditions>
+                                <condition id="-7" inverted="1" name="Compare instance variable" sid="4596172367871845" type="Player">
+                                    <param id="0" name="Instance variable">Survivors</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="5432899532405478" type="Granedier">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
-        <event-group description="Helper functions." sid="993762252301922" title="Functions">
+        <event-group collapsed="1" description="Helper functions." sid="993762252301922" title="Functions">
             <sub-events>
                 <comment>Function called when the player is hit.</comment>
                 <event-block sid="1701861504165762">
