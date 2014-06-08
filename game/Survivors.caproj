@@ -213,6 +213,14 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Granade" sid="5327936511828972">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1271976657992378" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder expanded="0" name="Background">
             <object-type name="ParallaxBG" sid="2664570612329269">
@@ -224,8 +232,8 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Enemies">
-            <object-folder expanded="1" name="Boss">
+        <object-folder expanded="0" name="Enemies">
+            <object-folder expanded="0" name="Boss">
                 <object-type name="Tentacle02" sid="1584663686165809">
                     <plugin id="Sprite" />
                     <animation-folder expanded="1">
@@ -273,6 +281,11 @@
                 </object-type>
                 <object-type name="TentaclePlant" sid="8194405433030862">
                     <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="7723721592083815">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
                     <animation-folder expanded="1">
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9736045820877388" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -316,18 +329,11 @@
                 <plugin id="Sprite" />
                 <animation-folder expanded="1">
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1626520919227184" speed="5">
-                        <frame duration="1" hotspotX="12.75" hotspotY="8.125" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="1" loop="0" name="Dead" pingpong="0" repeatcount="1" repeatto="0" sid="9584644454241272" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                            </collision-poly>
-                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -398,19 +404,22 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder expanded="1">
-                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8312123361049688" speed="5">
+                    <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8312123361049688" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shootpoint" x="-0.09375" y="3.25" />
-                            <image-point name="TurretOrigin" x="0.25" y="0.3125" />
+                            <image-point name="Shootpoint" x="0.484375" y="0.270833" />
+                            <image-point name="TurretOrigin" x="0.296875" y="0.5625" />
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shootpoint" x="0.484375" y="0.145833" />
+                            <image-point name="Shootpoint" x="0.484375" y="0.270833" />
+                            <image-point name="TurretOrigin" x="0.296875" y="0.5625" />
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shootpoint" x="0.484375" y="0.145833" />
+                            <image-point name="Shootpoint" x="0.484375" y="0.270833" />
+                            <image-point name="TurretOrigin" x="0.296875" y="0.5625" />
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Shootpoint" x="0.484375" y="0.145833" />
+                            <image-point name="Shootpoint" x="0.484375" y="0.270833" />
+                            <image-point name="TurretOrigin" x="0.296875" y="0.5625" />
                         </frame>
                     </animation>
                 </animation-folder>
@@ -511,6 +520,7 @@
         </family>
         <family name="PlayerProjectile" plugin-id="Sprite" sid="307295951801195">
             <members>
+                <member>Granade</member>
                 <member>Shot</member>
                 <member>ShotgunShoot</member>
             </members>
@@ -578,11 +588,11 @@
             </behaviors>
         </family>
     </families>
-    <layout-folder expanded="1">
+    <layout-folder expanded="0">
         <layout>Game.xml</layout>
         <layout>TitleScreen.xml</layout>
     </layout-folder>
-    <event-folder expanded="1">
+    <event-folder expanded="0">
         <event-sheet>GameMain.xml</event-sheet>
         <event-sheet>Enemies.xml</event-sheet>
         <event-sheet>TitleScreen.xml</event-sheet>
