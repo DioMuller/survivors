@@ -2472,7 +2472,7 @@
                         <width>24</width>
                         <height>19</height>
                         <depth>0</depth>
-                        <hotspotX>0.791666687</hotspotX>
+                        <hotspotX>0.5</hotspotX>
                         <hotspotY>1</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -2986,6 +2986,16 @@
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>0</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

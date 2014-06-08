@@ -17,6 +17,7 @@
         <variable comment="Dramatic pause time (pauses the game when enemy dies)" constant="0" name="DramaticPauseTime" sid="8911201919267045" static="0" type="number">0.1</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
+        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">1</variable>
         <event-group description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
@@ -289,7 +290,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Camera control, player placement on screen and and other rendering (layers, effects) events." sid="8555777568681449" title="Camera, Positioning and Rendering Events">
+        <event-group description="Camera control, player placement on screen and and other rendering (layers, effects) events." sid="8555777568681449" title="Camera, Positioning and Rendering Events">
             <sub-events>
                 <comment>Hides debug layer if flag is set to 0.</comment>
                 <event-block sid="2117358144359866">
@@ -351,10 +352,13 @@
                     </conditions>
                     <actions>
                         <action behavior="Bullet" id="0" name="Set speed" sid="8890725826516254" type="Camera">
-                            <param id="0" name="Speed">0</param>
+                            <param id="0" name="Speed">-CameraSpeed</param>
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="858427136910586" type="Player">
-                            <param id="0" name="Speed">0</param>
+                            <param id="0" name="Speed">-CameraSpeed</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="3601060799785007" type="Boss">
+                            <param id="0" name="Speed">-CameraSpeed</param>
                         </action>
                     </actions>
                 </event-block>
@@ -701,6 +705,11 @@
                             <param id="0" name="Name">&quot;HitPlayer&quot;</param>
                         </condition>
                         <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="2603713534004487" type="Player" />
+                        <condition id="-14" name="Compare variable" sid="7387823573818675" type="System">
+                            <param id="0" name="Variable">PlayerInvincible</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-12" name="Subtract from" sid="2360867303945803" type="Player">
@@ -747,6 +756,19 @@
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
                                 </action>
+                                <action id="-2" name="Set Y" sid="9759580865231754" type="Shot">
+                                    <param id="0" name="Y">Shot.Y + random(-ShotPosition, ShotPosition + 1)</param>
+                                </action>
+                                <action id="-18" name="Rotate clockwise" sid="6875910793465701" type="Shot">
+                                    <param id="0" name="Degrees">random(-ShotAngle,ShotAngle + 1)  + (Player.TurretInverted ? 180 : 0)</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="7185394934593382" type="Turret">
+                                    <param id="0" name="Frame number">Turret.CurrentFrame</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="1131167485152914" type="Turret">
+                                    <param id="0" name="Instance variable">CurrentFrame</param>
+                                    <param id="1" name="Value">(Turret.CurrentFrame + 1)%2</param>
+                                </action>
                                 <action id="-13" name="Set boolean" sid="7612343237218698" type="Player">
                                     <param id="0" name="Instance variable">IsUsingMachinegun</param>
                                     <param id="1" name="Value">1</param>
@@ -757,19 +779,6 @@
                                 <action id="-13" name="Set boolean" sid="7256402098409919" type="Player">
                                     <param id="0" name="Instance variable">IsUsingMachinegun</param>
                                     <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-18" name="Rotate clockwise" sid="6875910793465701" type="Shot">
-                                    <param id="0" name="Degrees">random(-ShotAngle,ShotAngle + 1) + Player.TurretInverted ? 180 : 0</param>
-                                </action>
-                                <action id="-2" name="Set Y" sid="9759580865231754" type="Shot">
-                                    <param id="0" name="Y">Shot.Y + random(-ShotPosition, ShotPosition + 1)</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="7185394934593382" type="Turret">
-                                    <param id="0" name="Frame number">Turret.CurrentFrame</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="1131167485152914" type="Turret">
-                                    <param id="0" name="Instance variable">CurrentFrame</param>
-                                    <param id="1" name="Value">(Turret.CurrentFrame + 1)%2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -786,7 +795,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="1021450815859162" type="Turret">
+                                <action id="0" name="Spawn another object" sid="1021450815859162" type="Player">
                                     <param id="0" name="Object">ShotgunShoot</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
@@ -797,7 +806,7 @@
                                 <action id="-2" name="Set Y" sid="2284508124869983" type="ShotgunShoot">
                                     <param id="0" name="Y">ShotgunShoot.Y + random(-ShotPosition, ShotPosition + 1)</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="8426214842728777" type="Turret">
+                                <action id="0" name="Spawn another object" sid="8426214842728777" type="Player">
                                     <param id="0" name="Object">ShotgunShoot</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
@@ -805,7 +814,7 @@
                                 <action id="-2" name="Set Y" sid="8322869277269475" type="ShotgunShoot">
                                     <param id="0" name="Y">ShotgunShoot.Y + random(-ShotPosition, ShotPosition + 1)</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="6301985199025866" type="Turret">
+                                <action id="0" name="Spawn another object" sid="6301985199025866" type="Player">
                                     <param id="0" name="Object">ShotgunShoot</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="Image point">&quot;Shootpoint&quot;</param>

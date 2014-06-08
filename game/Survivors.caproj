@@ -224,8 +224,8 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Enemies">
-            <object-folder expanded="0" name="Boss">
+        <object-folder expanded="1" name="Enemies">
+            <object-folder expanded="1" name="Boss">
                 <object-type name="Tentacle02" sid="1584663686165809">
                     <plugin id="Sprite" />
                     <animation-folder expanded="1">
@@ -260,6 +260,11 @@
                 </object-type>
                 <object-type name="Boss" sid="584018980502158">
                     <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="5305599791108028">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                    </behaviors>
                     <animation-folder expanded="1">
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2475760593625217" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -449,10 +454,12 @@
                 </instance-variables>
                 <animation-folder expanded="1">
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7040101888905711" speed="5">
-                        <frame duration="1" hotspotX="0.791667" hotspotY="1">
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
                             <image-point name="Shootpoint" x="0.958333" y="0.157895" />
                         </frame>
-                        <frame duration="1" hotspotX="0.791667" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="1">
+                            <image-point name="Shootpoint" x="0.958333" y="0.157895" />
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
