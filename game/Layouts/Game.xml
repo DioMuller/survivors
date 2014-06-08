@@ -2928,6 +2928,13 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <HP>20</HP>
+                        <Points>100</Points>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -2950,6 +2957,13 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <HP>20</HP>
+                        <Points>100</Points>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -2972,6 +2986,13 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <HP>20</HP>
+                        <Points>100</Points>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -2994,6 +3015,13 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <HP>20</HP>
+                        <Points>100</Points>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -3170,6 +3198,13 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <HP>20</HP>
+                        <Points>100</Points>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -3192,6 +3227,13 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <HP>20</HP>
+                        <Points>100</Points>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

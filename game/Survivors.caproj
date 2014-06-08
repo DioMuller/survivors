@@ -33,6 +33,7 @@
     </used-behaviors>
     <used-effects>
         <effect author="Scirra" id="gamma">Gamma</effect>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Scirra" id="noise">Noise</effect>
     </used-effects>
     <configurations>
@@ -74,6 +75,9 @@
             <object-type name="Storage" sid="5243391131129898">
                 <plugin id="WebStorage" />
             </object-type>
+            <object-type name="Function" sid="8807024520685956">
+                <plugin id="Function" />
+            </object-type>
         </object-folder>
         <object-folder expanded="0" name="Helper">
             <object-type name="Camera" sid="1323660039230511">
@@ -105,7 +109,7 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Objects">
+        <object-folder expanded="0" name="Objects">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -250,6 +254,14 @@
                     <plugin id="Sprite" />
                     <animation-folder expanded="1">
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2475760593625217" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="TentaclePlant" sid="8194405433030862">
+                    <plugin id="Sprite" />
+                    <animation-folder expanded="1">
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9736045820877388" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                     </animation-folder>
@@ -434,17 +446,17 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-type name="Function" sid="8807024520685956">
-            <plugin id="Function" />
-        </object-type>
-        <object-type name="TentaclePlant" sid="8194405433030862">
-            <plugin id="Sprite" />
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9736045820877388" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
+        <object-folder expanded="0" name="Title">
+            <object-type name="TitleFont" sid="7875553820570475">
+                <plugin id="Spritefont2" />
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
+                <texture />
+            </object-type>
+        </object-folder>
     </object-folder>
     <families>
         <family name="Enemy" plugin-id="Sprite" sid="2931763109160961">
@@ -521,12 +533,30 @@
                 <member>TurretShooter</member>
             </members>
         </family>
-        <family name="BossParts" plugin-id="Sprite" sid="7093271687998172">
+        <family name="BossPart" plugin-id="Sprite" sid="7093271687998172">
             <members>
                 <member>MainTentacle</member>
                 <member>Tentacle01</member>
                 <member>Tentacle02</member>
             </members>
+        </family>
+        <family name="BossFull" plugin-id="Sprite" sid="8346493478013871">
+            <members>
+                <member>Boss</member>
+                <member>MainTentacle</member>
+                <member>Tentacle01</member>
+                <member>Tentacle02</member>
+                <member>TentaclePlant</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="Boss/Boss part HP." name="HP" sid="3654271737476488" type="number" />
+                <instance-variable comment="Points got from killing the boss or part." name="Points" sid="1167590426831158" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="486161791236258">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder expanded="1">

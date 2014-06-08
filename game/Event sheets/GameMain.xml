@@ -17,7 +17,7 @@
         <variable comment="Dramatic pause time (pauses the game when enemy dies)" constant="0" name="DramaticPauseTime" sid="8911201919267045" static="0" type="number">0.1</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
-        <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
+        <event-group description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
                 <event-block any="1" sid="5839817289045311">
@@ -47,10 +47,14 @@
                     </sub-events>
                 </event-block>
                 <comment>Remaps controller ( W to Up)</comment>
-                <event-block sid="7010657242711293">
+                <event-block any="1" sid="7010657242711293">
                     <conditions>
                         <condition id="2" name="Key is down" sid="8260060870164343" type="Keyboard">
                             <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                        <condition id="3" name="Is button down" sid="4359573892309851" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">12</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -60,10 +64,14 @@
                     </actions>
                 </event-block>
                 <comment>Remaps controller (A to Left)</comment>
-                <event-block sid="2372877592491562">
+                <event-block any="1" sid="2372877592491562">
                     <conditions>
                         <condition id="2" name="Key is down" sid="1756855415641945" type="Keyboard">
                             <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                        <condition id="3" name="Is button down" sid="6648400513725437" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">14</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -73,10 +81,14 @@
                     </actions>
                 </event-block>
                 <comment>Remaps controller ( S to Down)</comment>
-                <event-block sid="9694203435112949">
+                <event-block any="1" sid="9694203435112949">
                     <conditions>
                         <condition id="2" name="Key is down" sid="5222997502542291" type="Keyboard">
                             <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                        <condition id="3" name="Is button down" sid="5257553057283662" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">13</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -86,15 +98,47 @@
                     </actions>
                 </event-block>
                 <comment>Remaps controller ( D to Right)</comment>
-                <event-block sid="1583024347804906">
+                <event-block any="1" sid="1583024347804906">
                     <conditions>
                         <condition id="2" name="Key is down" sid="1812643188587365" type="Keyboard">
                             <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                        <condition id="3" name="Is button down" sid="1721782973921984" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">15</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action behavior="8Direction" id="7" name="Simulate control" sid="9434222737208028" type="Player">
                             <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Sets controller X and Y axis (Left Stick) to the character movement.</comment>
+                <event-block any="1" sid="4315114299590872">
+                    <conditions>
+                        <condition id="5" name="Compare axis" sid="7068125874078239" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">0</param>
+                            <param id="2" name="Comparison">1</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="5" name="Compare axis" sid="2344075331327112" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Axis">1</param>
+                            <param id="2" name="Comparison">1</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="3" name="Set speed" sid="3584233665448162" type="Player">
+                            <param id="0" name="Speed">min( Player.8Direction.Speed + (Player.8Direction.Acceleration * dt), Player.8Direction.MaxSpeed)</param>
+                        </action>
+                        <action behavior="8Direction" id="9" name="Set vector X" sid="1658473807747688" type="Player">
+                            <param id="0" name="Vector X">Gamepad.Axis(0,0) * Player.8Direction.Speed * dt</param>
+                        </action>
+                        <action behavior="8Direction" id="10" name="Set vector Y" sid="7498969741732546" type="Player">
+                            <param id="0" name="Vector Y">Gamepad.Axis(0,1) * Player.8Direction.Speed * dt</param>
                         </action>
                     </actions>
                 </event-block>
@@ -163,7 +207,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Camera control, player placement on screen and and other rendering (layers, effects) events." sid="8555777568681449" title="Camera, Positioning and Rendering Events">
+        <event-group collapsed="1" description="Camera control, player placement on screen and and other rendering (layers, effects) events." sid="8555777568681449" title="Camera, Positioning and Rendering Events">
             <sub-events>
                 <comment>Hides debug layer if flag is set to 0.</comment>
                 <event-block sid="2117358144359866">

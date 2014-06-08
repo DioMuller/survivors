@@ -10,10 +10,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1">Game</layout>
-        <layout>TitleScreen</layout>
-        <event-sheet>GameMain</event-sheet>
+        <layout>Game</layout>
+        <event-sheet active="1">GameMain</event-sheet>
         <event-sheet>Enemies</event-sheet>
+        <event-sheet>TitleScreen</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -26,6 +26,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="PlayerProjectile" />
         <family expanded="0" name="GameObject" />
         <family expanded="0" name="PlayerPart" />
-        <family expanded="0" name="BossParts" />
+        <family expanded="0" name="BossPart" />
+        <family expanded="0" name="BossFull" />
     </families-expanded>
 </c2uistate>
