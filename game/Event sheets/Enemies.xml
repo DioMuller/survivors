@@ -170,6 +170,9 @@
                 <comment>Enemies stop walking when they die!</comment>
                 <event-block sid="9842749277155371">
                     <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4192727484606427" type="System">
+                            <param id="0" name="Interval (seconds)">Enemy.UpdateTime</param>
+                        </condition>
                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2176179865332374" type="Enemy">
                             <param id="0" name="Instance variable">SeekingPlayer</param>
                         </condition>
@@ -443,7 +446,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="The boss is a big octopus that runs to the player base." sid="468630034715306" title="Boss">
+        <event-group description="The boss is a big octopus that runs to the player base." sid="468630034715306" title="Boss">
             <sub-events>
                 <comment>The boss parts will follow the boss.</comment>
                 <event-block sid="8224511202679279">
@@ -529,6 +532,7 @@
                             <param id="0" name="Name">&quot;DramaticPause&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
+                        <action id="-9" name="Destroy" sid="7122935462374743" type="BossFull" />
                     </actions>
                 </event-block>
                 <comment>When an explosion hits a enemy, it damages the enemy.</comment>

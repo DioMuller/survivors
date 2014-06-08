@@ -17,7 +17,7 @@
         <variable comment="Dramatic pause time (pauses the game when enemy dies)" constant="0" name="DramaticPauseTime" sid="8911201919267045" static="0" type="number">0.1</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
-        <event-group description="Player controller events." sid="7495863798319145" title="Controller">
+        <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
                 <event-block any="1" sid="5839817289045311">
@@ -383,7 +383,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Survivor pickup events." sid="3814513092485815" title="Survivor">
+        <event-group description="Survivor pickup events." sid="3814513092485815" title="Survivor">
             <sub-events>
                 <comment>Survivor pickup.</comment>
                 <event-block sid="7520839760438962">
@@ -406,26 +406,48 @@
                         </action>
                     </actions>
                 </event-block>
-                <comment>If you hit a survivor, it turns into a zombie.</comment>
+                <comment>If you hit a survivor, it is hurt.</comment>
                 <event-block sid="9780605234240704">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="6315859163289056" type="Survivor">
                             <param id="0" name="Object">PlayerProjectile</param>
                         </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="5343882460438325" type="Survivor" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="5445126940658809" type="Survivor">
-                            <param id="0" name="Object">Zombie</param>
-                            <param id="1" name="Layer">&quot;Game&quot;</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="4885063741230538" type="Survivor" />
                         <action id="0" name="Play" sid="6013478412062169" type="Audio">
                             <param id="0" name="Audio file">Survivor_Dead</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
+                        <action id="-12" name="Subtract from" sid="1760875383815696" type="Survivor">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="9226487694385725" type="Survivor">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>If the survivor has no health remaining, it turns into a zombie.</comment>
+                <event-block sid="6717507944329868">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8004552131775381" type="Survivor">
+                            <param id="0" name="Instance variable">HP</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="4347855667763402" type="Survivor">
+                            <param id="0" name="Object">Zombie</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="4233178702260169" type="Survivor" />
                     </actions>
                 </event-block>
             </sub-events>

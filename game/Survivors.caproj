@@ -109,7 +109,7 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Objects">
+        <object-folder expanded="1" name="Objects">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -155,6 +155,14 @@
             </object-type>
             <object-type name="Survivor" sid="3321618024031327">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="Survivor HP" name="HP" sid="6951151781398154" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Flash" sid="7557191410431708">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder expanded="1">
                     <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="950943228950004" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -477,6 +485,7 @@
                 <instance-variable comment="Is the enemy seeking the player?" name="SeekingPlayer" sid="5851999531072304" type="boolean" />
                 <instance-variable comment="Audio file played when seeing the player." name="AudioOnSee" sid="8319834728031582" type="string" />
                 <instance-variable comment="Audio played when enemy dies." name="AudioOnDead" sid="8841701810540273" type="string" />
+                <instance-variable comment="Direction update time (in seconds)" name="UpdateTime" sid="8416827564261586" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Flash" sid="820791141087094">
