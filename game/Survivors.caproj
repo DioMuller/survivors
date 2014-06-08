@@ -109,7 +109,7 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Objects">
+        <object-folder expanded="0" name="Objects">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -372,13 +372,14 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Player">
+        <object-folder expanded="1" name="Player">
             <object-type name="Player" sid="7862889593201915">
                 <plugin id="Sprite" />
                 <instance-variables>
                     <instance-variable comment="Number of survivors." name="Survivors" sid="5281314384537901" type="number" />
                     <instance-variable comment="Is the player shooting with the machine gun?" name="IsUsingMachinegun" sid="4740520724662285" type="boolean" />
                     <instance-variable comment="Is the player using the shotgun?" name="IsUsingShotgun" sid="4203515014440433" type="boolean" />
+                    <instance-variable comment="Is the turret inverted?" name="TurretInverted" sid="6274194179443883" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="3866918799761208">
@@ -448,7 +449,9 @@
                 </instance-variables>
                 <animation-folder expanded="1">
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7040101888905711" speed="5">
-                        <frame duration="1" hotspotX="0.791667" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.791667" hotspotY="1">
+                            <image-point name="Shootpoint" x="0.958333" y="0.157895" />
+                        </frame>
                         <frame duration="1" hotspotX="0.791667" hotspotY="1" />
                     </animation>
                 </animation-folder>

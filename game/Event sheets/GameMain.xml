@@ -17,7 +17,7 @@
         <variable comment="Dramatic pause time (pauses the game when enemy dies)" constant="0" name="DramaticPauseTime" sid="8911201919267045" static="0" type="number">0.1</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
-        <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
+        <event-group description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
                 <event-block any="1" sid="5839817289045311">
@@ -39,12 +39,6 @@
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
-                    <sub-events>
-                        <event-block any="1" sid="1625541269484604">
-                            <conditions />
-                            <actions />
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <comment>Remaps controller ( W to Up)</comment>
                 <event-block any="1" sid="7010657242711293">
@@ -142,6 +136,94 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-group collapsed="1" description="Turret position shift events." sid="8827348926521787" title="Turret Shift">
+                    <sub-events>
+                        <variable comment="Has the player shifted the turret recently?" constant="0" name="HasShifted" sid="3785510696946602" static="1" type="number">0</variable>
+                        <comment>Shifts turret position</comment>
+                        <event-block any="1" sid="2031174586197691">
+                            <conditions>
+                                <condition id="3" name="Is button down" sid="8737562344074987" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Button">2</param>
+                                </condition>
+                                <condition id="2" name="Mouse button is down" sid="250832304053303" type="Mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="9779116376614" type="Keyboard">
+                                    <param id="0" name="Key">16 (Shift)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="2292425485025299">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="9960329043995696" type="System">
+                                            <param id="0" name="Variable">HasShifted</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-14" name="Toggle boolean" sid="5892429885628867" type="Player">
+                                            <param id="0" name="Instance variable">TurretInverted</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3787486098013682" type="System">
+                                            <param id="0" name="Variable">HasShifted</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Lets the player shift turret position again, if the player released the shift turret button.</comment>
+                        <event-block sid="3903545533385366">
+                            <conditions>
+                                <condition id="3" inverted="1" name="Is button down" sid="1251831008782075" type="Gamepad">
+                                    <param id="0" name="Gamepad">0</param>
+                                    <param id="1" name="Button">2</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Mouse button is down" sid="4764836149695574" type="Mouse">
+                                    <param id="0" name="Mouse button">2</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="8570841017901958" type="Keyboard">
+                                    <param id="0" name="Key">16 (Shift)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="746793105817974" type="System">
+                                    <param id="0" name="Variable">HasShifted</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Mirrors the turret, if the turret is inverted.</comment>
+                        <event-block sid="9615974238463531">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="8872636366313338" type="Player">
+                                    <param id="0" name="Instance variable">TurretInverted</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="6498631559777619" type="Turret">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Unmirrors the turret, if the turret is not inverted.</comment>
+                        <event-block sid="6351894695059508">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2733719950126874" type="Player">
+                                    <param id="0" name="Instance variable">TurretInverted</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="3285280357650137" type="Turret">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
         <event-group collapsed="1" description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
@@ -383,7 +465,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Survivor pickup events." sid="3814513092485815" title="Survivor">
+        <event-group collapsed="1" description="Survivor pickup events." sid="3814513092485815" title="Survivor">
             <sub-events>
                 <comment>Survivor pickup.</comment>
                 <event-block sid="7520839760438962">
@@ -610,7 +692,7 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Helper functions." sid="993762252301922" title="Functions">
+        <event-group description="Helper functions." sid="993762252301922" title="Functions">
             <sub-events>
                 <comment>Function called when the player is hit.</comment>
                 <event-block sid="1701861504165762">
@@ -660,7 +742,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="1075148486512036" type="Player">
+                                <action id="0" name="Spawn another object" sid="1075148486512036" type="Turret">
                                     <param id="0" name="Object">Shot</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
@@ -677,7 +759,7 @@
                                     <param id="1" name="Value">0</param>
                                 </action>
                                 <action id="-18" name="Rotate clockwise" sid="6875910793465701" type="Shot">
-                                    <param id="0" name="Degrees">random(-ShotAngle,ShotAngle + 1)</param>
+                                    <param id="0" name="Degrees">random(-ShotAngle,ShotAngle + 1) + Player.TurretInverted ? 180 : 0</param>
                                 </action>
                                 <action id="-2" name="Set Y" sid="9759580865231754" type="Shot">
                                     <param id="0" name="Y">Shot.Y + random(-ShotPosition, ShotPosition + 1)</param>
@@ -704,7 +786,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Spawn another object" sid="1021450815859162" type="Player">
+                                <action id="0" name="Spawn another object" sid="1021450815859162" type="Turret">
                                     <param id="0" name="Object">ShotgunShoot</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
@@ -715,7 +797,7 @@
                                 <action id="-2" name="Set Y" sid="2284508124869983" type="ShotgunShoot">
                                     <param id="0" name="Y">ShotgunShoot.Y + random(-ShotPosition, ShotPosition + 1)</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="8426214842728777" type="Player">
+                                <action id="0" name="Spawn another object" sid="8426214842728777" type="Turret">
                                     <param id="0" name="Object">ShotgunShoot</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="Image point">&quot;Shootpoint&quot;</param>
@@ -723,7 +805,7 @@
                                 <action id="-2" name="Set Y" sid="8322869277269475" type="ShotgunShoot">
                                     <param id="0" name="Y">ShotgunShoot.Y + random(-ShotPosition, ShotPosition + 1)</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="6301985199025866" type="Player">
+                                <action id="0" name="Spawn another object" sid="6301985199025866" type="Turret">
                                     <param id="0" name="Object">ShotgunShoot</param>
                                     <param id="1" name="Layer">&quot;Game&quot;</param>
                                     <param id="2" name="Image point">&quot;Shootpoint&quot;</param>

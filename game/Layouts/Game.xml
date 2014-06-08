@@ -3371,6 +3371,7 @@
                         <Survivors>2</Survivors>
                         <IsUsingMachinegun>false</IsUsingMachinegun>
                         <IsUsingShotgun>false</IsUsingShotgun>
+                        <TurretInverted>false</TurretInverted>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
