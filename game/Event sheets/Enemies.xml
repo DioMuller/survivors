@@ -463,12 +463,15 @@
                 <comment>Destroys boss part after it is killed</comment>
                 <event-block sid="5603195358379774">
                     <conditions>
-                        <condition id="-14" name="Pick by unique ID" sid="765520886181797" type="BossPart">
-                            <param id="0" name="Unique ID">Enemy.UID</param>
+                        <condition id="0" name="On collision with another object" sid="765520886181797" type="BossPart">
+                            <param id="0" name="Object">Player</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="9815190585021684" type="BossPart" />
+                        <action id="0" name="Call function" sid="9815190585021684" type="Function">
+                            <param id="0" name="Name">&quot;HitPlayer&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Bullets hit boss, it takes damage it&apos;s not flashing.</comment>
@@ -546,6 +549,33 @@
                         <action id="-12" name="Subtract from" sid="5649810245912595" type="BossFull">
                             <param id="0" name="Instance variable">HP</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Sets the tentacle position when it is created.</comment>
+                <event-block sid="5403236693636199">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="5125330641328872" type="TentaclePlant" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5952417869120887" type="TentaclePlant">
+                            <param id="0" name="Instance variable">DistanceFromBoss</param>
+                            <param id="1" name="Value">TentaclePlant.X - Boss.X</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Makes the plant walk with the boss.</comment>
+                <event-block sid="7268733480557998">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="746370024900277" type="TentaclePlant">
+                            <param id="0" name="Instance variable">DistanceFromBoss</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="9267260152554409" type="TentaclePlant">
+                            <param id="0" name="X">Boss.X + TentaclePlant.DistanceFromBoss</param>
                         </action>
                     </actions>
                 </event-block>
