@@ -3392,12 +3392,21 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>400</speed>
+                                <speed>300</speed>
                                 <acceleration>0</acceleration>
-                                <gravity>0</gravity>
+                                <gravity>150</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
                                 <set-angle>Yes</set-angle>
                                 <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>2</wait-time>
+                                <fade-out-time>0.1</fade-out-time>
+                                <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -3444,6 +3453,7 @@
                         <Survivors>2</Survivors>
                         <IsUsingMachinegun>false</IsUsingMachinegun>
                         <IsUsingShotgun>false</IsUsingShotgun>
+                        <IsUsingGranade>false</IsUsingGranade>
                         <TurretInverted>false</TurretInverted>
                     </instance-variables>
                     <behavior-instances>

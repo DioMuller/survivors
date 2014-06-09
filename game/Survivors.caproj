@@ -109,7 +109,7 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Objects">
+        <object-folder expanded="1" name="Objects">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -215,6 +215,11 @@
             </object-type>
             <object-type name="Granade" sid="5327936511828972">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="6665271705509218">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1271976657992378" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -390,6 +395,7 @@
                     <instance-variable comment="Number of survivors." name="Survivors" sid="5281314384537901" type="number" />
                     <instance-variable comment="Is the player shooting with the machine gun?" name="IsUsingMachinegun" sid="4740520724662285" type="boolean" />
                     <instance-variable comment="Is the player using the shotgun?" name="IsUsingShotgun" sid="4203515014440433" type="boolean" />
+                    <instance-variable comment="Is the player using the granade?" name="IsUsingGranade" sid="6643924433741919" type="boolean" />
                     <instance-variable comment="Is the turret inverted?" name="TurretInverted" sid="6274194179443883" type="boolean" />
                 </instance-variables>
                 <behaviors>
