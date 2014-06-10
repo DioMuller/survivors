@@ -11,9 +11,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout>Game</layout>
+        <layout>GameOver</layout>
+        <layout>Title</layout>
         <event-sheet active="1">GameMain</event-sheet>
         <event-sheet>Enemies</event-sheet>
-        <event-sheet>TitleScreen</event-sheet>
+        <event-sheet>Screens</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

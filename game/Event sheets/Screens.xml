@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>TitleScreen</name>
+    <name>Screens</name>
     <events>
         <comment>Start game when any of the conditions are met.</comment>
         <event-block any="1" sid="8884476773834997">
@@ -15,8 +15,8 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="7032502229787024" type="System">
-                    <param id="0" name="Layout">Game</param>
+                <action id="-25" name="Go to layout (by name)" sid="7032502229787024" type="System">
+                    <param id="0" name="Layout">LayoutController.NextLayout</param>
                 </action>
             </actions>
         </event-block>

@@ -18,7 +18,7 @@
         <variable comment="Dramatic pause time (pauses the game when enemy dies)" constant="0" name="DramaticPauseTime" sid="8911201919267045" static="0" type="number">0.1</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
-        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">1</variable>
+        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">0</variable>
         <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
@@ -304,7 +304,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Camera control, player placement on screen and and other rendering (layers, effects) events." sid="8555777568681449" title="Camera, Positioning and Rendering Events">
+        <event-group collapsed="1" description="Camera control, player placement on screen and and other rendering (layers, effects) events." sid="8555777568681449" title="Camera, Positioning and Rendering Events">
             <sub-events>
                 <comment>Hides debug layer if flag is set to 0.</comment>
                 <event-block sid="2117358144359866">
@@ -555,7 +555,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Player events." sid="1027178941590517" title="Player">
+        <event-group description="Player events." sid="1027178941590517" title="Player">
             <sub-events>
                 <comment>If the player has no survivors left, restart the game.</comment>
                 <event-block sid="8955538910618842">
@@ -568,7 +568,9 @@
                     </conditions>
                     <actions>
                         <action id="-21" name="Reset global variables" sid="4439566014908862" type="System" />
-                        <action id="-26" name="Restart layout" sid="749214528516938" type="System" />
+                        <action id="-2" name="Go to layout" sid="313431051770468" type="System">
+                            <param id="0" name="Layout">GameOver</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Update PlayerParts.</comment>

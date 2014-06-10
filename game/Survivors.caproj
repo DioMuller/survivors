@@ -58,7 +58,7 @@
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="1">
+    <object-folder expanded="0">
         <object-folder expanded="0" name="System">
             <object-type name="Audio" sid="5055689259425112">
                 <plugin id="Audio" />
@@ -117,7 +117,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Objects">
+        <object-folder expanded="0" name="Objects">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -509,7 +509,7 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Player">
+        <object-folder expanded="0" name="Player">
             <object-type name="Player" sid="7862889593201915">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -611,6 +611,17 @@
                 <texture />
             </object-type>
         </object-folder>
+        <object-type name="LayoutController" sid="8979220572736081">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable comment="Next Layout, when ENTER or START is pressed." name="NextLayout" sid="8435662931331493" type="string" />
+            </instance-variables>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8916045458032872" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="Enemy" plugin-id="Sprite" sid="2931763109160961">
@@ -663,13 +674,16 @@
         <family name="GameObject" plugin-id="Sprite" sid="8826393813247918">
             <members>
                 <member>Bomber</member>
+                <member>Boss</member>
                 <member>Camera</member>
                 <member>Cartidge</member>
                 <member>Divider</member>
                 <member>Driver</member>
                 <member>EnemyShoot</member>
                 <member>Explosion</member>
+                <member>Granade</member>
                 <member>Granedier</member>
+                <member>MainTentacle</member>
                 <member>Player</member>
                 <member>Shot</member>
                 <member>Shotguner</member>
@@ -677,6 +691,11 @@
                 <member>Spawn</member>
                 <member>Spitter</member>
                 <member>Survivor</member>
+                <member>Tentacle01</member>
+                <member>Tentacle02</member>
+                <member>TentaclePlant</member>
+                <member>Turn</member>
+                <member>Turret</member>
                 <member>TurretShooter</member>
                 <member>Zombie</member>
             </members>
@@ -715,14 +734,15 @@
             </behaviors>
         </family>
     </families>
-    <layout-folder expanded="0">
+    <layout-folder expanded="1">
         <layout>Game.xml</layout>
-        <layout>TitleScreen.xml</layout>
+        <layout>GameOver.xml</layout>
+        <layout>Title.xml</layout>
     </layout-folder>
-    <event-folder expanded="0">
+    <event-folder expanded="1">
         <event-sheet>GameMain.xml</event-sheet>
         <event-sheet>Enemies.xml</event-sheet>
-        <event-sheet>TitleScreen.xml</event-sheet>
+        <event-sheet>Screens.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="3" />
