@@ -16,6 +16,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet>GameMain</event-sheet>
         <event-sheet>Enemies</event-sheet>
         <event-sheet>Screens</event-sheet>
+        <event-sheet>General</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

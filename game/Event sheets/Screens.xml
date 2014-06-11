@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Screens</name>
     <events>
+        <include>General</include>
         <comment>Start game when any of the conditions are met.</comment>
         <event-block any="1" sid="8884476773834997">
             <conditions>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>General</name>
+    <events>
+        <comment>Plays the background music at the start.</comment>
+        <event-block sid="5477695303761879">
+            <conditions>
+                <condition id="-18" name="On created" sid="7761526113058787" type="MusicPlayer" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="6141958125330227" type="Audio">
+                    <param id="0" name="Tag">&quot;BGM&quot;</param>
+                </action>
+                <action id="7" name="Play (by name)" sid="5713664908184529" type="Audio">
+                    <param id="0" name="Folder">0</param>
+                    <param id="1" name="Audio file name">MusicPlayer.Music</param>
+                    <param id="3" name="Loop">0</param>
+                    <param id="4" name="Volume">0</param>
+                    <param id="2" name="Tag (optional)">&quot;BGM&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

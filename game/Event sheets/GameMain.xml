@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>GameMain</name>
     <events>
+        <include>General</include>
         <include>Enemies</include>
         <comment>Game Data</comment>
         <variable comment="Player Score." constant="0" name="Score" sid="7486391333038373" static="0" type="number">0</variable>
@@ -228,7 +229,7 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
+        <event-group collapsed="1" description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
             <sub-events>
                 <comment>Destroys shot outside of screen.</comment>
                 <event-block sid="5269143083626051">
