@@ -2229,7 +2229,7 @@
                         <Speed>400</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
-                        <AudioOnSee></AudioOnSee>
+                        <AudioOnSee>Bomber_See</AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
                     </instance-variables>
@@ -2284,8 +2284,8 @@
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
-                        <AudioOnSee></AudioOnSee>
-                        <AudioOnDead></AudioOnDead>
+                        <AudioOnSee>Divider_see</AudioOnSee>
+                        <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
                     </instance-variables>
                     <behavior-instances>
@@ -2603,8 +2603,8 @@
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
-                        <AudioOnSee></AudioOnSee>
-                        <AudioOnDead></AudioOnDead>
+                        <AudioOnSee>Divider_see</AudioOnSee>
+                        <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
                     </instance-variables>
                     <behavior-instances>
@@ -2658,7 +2658,7 @@
                         <Speed>400</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
-                        <AudioOnSee></AudioOnSee>
+                        <AudioOnSee>Bomber_See</AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
                     </instance-variables>
@@ -2823,8 +2823,8 @@
                         <Speed>50</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
-                        <AudioOnSee></AudioOnSee>
-                        <AudioOnDead></AudioOnDead>
+                        <AudioOnSee>Divider_see</AudioOnSee>
+                        <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
                     </instance-variables>
                     <behavior-instances>
@@ -2878,7 +2878,7 @@
                         <Speed>400</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
-                        <AudioOnSee></AudioOnSee>
+                        <AudioOnSee>Bomber_See</AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
                     </instance-variables>
@@ -2933,7 +2933,7 @@
                         <Speed>400</Speed>
                         <AngleOfMotion>0</AngleOfMotion>
                         <SeekingPlayer>false</SeekingPlayer>
-                        <AudioOnSee></AudioOnSee>
+                        <AudioOnSee>Bomber_See</AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
                     </instance-variables>
@@ -3389,7 +3389,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <SoundFile>Shotgun</SoundFile>
+                        <SoundFile>Granade</SoundFile>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">

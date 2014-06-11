@@ -58,7 +58,7 @@
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
-    <object-folder expanded="0">
+    <object-folder expanded="1">
         <object-folder expanded="0" name="System">
             <object-type name="Audio" sid="5055689259425112">
                 <plugin id="Audio" />
@@ -117,7 +117,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Objects">
+        <object-folder expanded="1" name="Objects">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -245,7 +245,7 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Enemies">
+        <object-folder expanded="1" name="Enemies">
             <object-folder expanded="0" name="Boss">
                 <object-type name="Tentacle02" sid="1584663686165809">
                     <plugin id="Sprite" />
@@ -734,7 +734,7 @@
             </behaviors>
         </family>
     </families>
-    <layout-folder expanded="1">
+    <layout-folder expanded="0">
         <layout>Game.xml</layout>
         <layout>GameOver.xml</layout>
         <layout>Title.xml</layout>
@@ -779,6 +779,11 @@
         <file name="Zombie_See.ogg" />
         <file name="Survivor_Dead.ogg" />
         <file name="Zombie_Dead.ogg" />
+        <file name="Bomber_See.ogg" />
+        <file name="Divider_Dead.ogg" />
+        <file name="Divider_see.ogg" />
+        <file name="Spit.ogg" />
+        <file name="Granade.ogg" />
     </sounds-folder>
     <music-folder expanded="1" />
     <files-folder expanded="1">
