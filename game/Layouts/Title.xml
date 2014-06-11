@@ -4,8 +4,8 @@
     <sid>625955569295439</sid>
     <event-sheet>Screens</event-sheet>
     <size>
-        <width>854</width>
-        <height>480</height>
+        <width>1280</width>
+        <height>720</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -54,8 +54,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>64</x>
-                        <y>52</y>
+                        <x>293</x>
+                        <y>155</y>
                         <z>0</z>
                         <width>737</width>
                         <height>143</height>
@@ -93,8 +93,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>54</x>
-                        <y>393</y>
+                        <x>302</x>
+                        <y>505</y>
                         <z>0</z>
                         <width>737</width>
                         <height>143</height>
