@@ -524,7 +524,39 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="470229447322066" type="HUDScores">
-                            <param id="0" name="Text">&quot;Survivors:&quot; &amp; Player.Survivors &amp; &quot;/&quot; &amp; SurvivorLimit &amp; &quot;  Score: &quot; &amp; Score &amp; &quot;  Hi-Score: &quot; &amp; HighScore</param>
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot;  Hi-Score: &quot; &amp; HighScore</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Lits the survivor counter indicator if the player has the number of survivors needed.</comment>
+                <event-block sid="7537315886076669">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5438134625615521" type="SurvivorHUD">
+                            <param id="0" name="Instance variable">SurvivorCount</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">Player.Survivors</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2787543495845746" type="SurvivorHUD">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Unlits the survivor counter indicator if the player has less than the number of survivors needed.</comment>
+                <event-block sid="6119481972068618">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5600855275538764" type="SurvivorHUD">
+                            <param id="0" name="Instance variable">SurvivorCount</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">Player.Survivors</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="5146550008357141" type="SurvivorHUD">
+                            <param id="0" name="Animation">&quot;None&quot;</param>
+                            <param id="1" name="From">1</param>
                         </action>
                     </actions>
                 </event-block>
