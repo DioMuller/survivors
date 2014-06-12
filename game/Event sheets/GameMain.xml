@@ -17,6 +17,7 @@
         <variable comment="Shot random Y position max value." constant="0" name="ShotPosition" sid="1149761586430817" static="0" type="number">5</variable>
         <variable comment="Camera (and character following it) speed." constant="0" name="CameraSpeed" sid="3644210586740942" static="0" type="number">100</variable>
         <variable comment="Dramatic pause time (pauses the game when enemy dies)" constant="0" name="DramaticPauseTime" sid="8911201919267045" static="0" type="number">0.1</variable>
+        <variable comment="Maximum number of Survivors" constant="0" name="SurvivorLimit" sid="4181269206356635" static="0" type="number">5</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
         <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">0</variable>
@@ -514,7 +515,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="HUD events and updates." sid="7836260230105831" title="HUD">
+        <event-group description="HUD events and updates." sid="7836260230105831" title="HUD">
             <sub-events>
                 <comment>Updates score and high score on HUD.</comment>
                 <event-block sid="8430060814907466">
@@ -523,7 +524,7 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Set text" sid="470229447322066" type="HUDScores">
-                            <param id="0" name="Text">&quot;Survivors:&quot; &amp; Player.Survivors &amp; &quot;  Score: &quot; &amp; Score &amp; &quot;  Hi-Score: &quot; &amp; HighScore</param>
+                            <param id="0" name="Text">&quot;Survivors:&quot; &amp; Player.Survivors &amp; &quot;/&quot; &amp; SurvivorLimit &amp; &quot;  Score: &quot; &amp; Score &amp; &quot;  Hi-Score: &quot; &amp; HighScore</param>
                         </action>
                     </actions>
                 </event-block>
