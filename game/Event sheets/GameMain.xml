@@ -530,13 +530,18 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Survivor pickup events." sid="3814513092485815" title="Survivor">
+        <event-group description="Survivor pickup events." sid="3814513092485815" title="Survivor">
             <sub-events>
                 <comment>Survivor pickup.</comment>
                 <event-block sid="7520839760438962">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="7509513715816406" type="Survivor">
                             <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6618241945564484" type="Player">
+                            <param id="0" name="Instance variable">Survivors</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">SurvivorLimit</param>
                         </condition>
                     </conditions>
                     <actions>
