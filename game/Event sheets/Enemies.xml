@@ -301,7 +301,7 @@
             </sub-events>
         </event-group>
         <event-group description="The zombie is a slow, dumb and weak enemy. It walks in the direction of the player, when the player enters his field of view." sid="6695857086812331" title="Zombie" />
-        <event-group description="The spitter is an enemy with decent resistence, but no movement. It rotates in a predefined arc, and spits a projectile at fixed time span." sid="8254302292856625" title="Spitter">
+        <event-group collapsed="1" description="The spitter is an enemy with decent resistence, but no movement. It rotates in a predefined arc, and spits a projectile at fixed time span." sid="8254302292856625" title="Spitter">
             <sub-events>
                 <comment>Spitter Parameters</comment>
                 <variable comment="Spitter enemy max rotation." constant="0" name="SpitterMaxRotation" sid="7438655777303651" static="0" type="number">15</variable>
@@ -415,7 +415,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="The divider creates new small enemies when it is hit." sid="2112679300905023" title="Divider">
+        <event-group description="The divider creates new small enemies when it is hit." sid="2112679300905023" title="Divider">
             <sub-events>
                 <comment>Creates small spawns when is hit.</comment>
                 <event-block sid="8389031813490296">
@@ -433,7 +433,7 @@
                                 <condition id="-10" name="For" sid="2538047898274582" type="System">
                                     <param id="0" name="Name">&quot;Counter&quot;</param>
                                     <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">10</param>
+                                    <param id="2" name="End index">5</param>
                                 </condition>
                             </conditions>
                             <actions>

@@ -421,38 +421,39 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-group collapsed="1" description="Player positioning events." sid="31258596315872" title="Player Positioning">
-                    <sub-events>
-                        <comment>Limits player X position to the minimum screen X position.</comment>
-                        <event-block sid="4919757083946753">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="8374351068520703" type="Player">
-                                    <param id="0" name="Comparison">3</param>
-                                    <param id="1" name="X co-ordinate">ViewportLeft(&quot;Game&quot;) + Player.Width</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="8407080807855817" type="Player">
-                                    <param id="0" name="X">ViewportLeft(&quot;Game&quot;) + Player.Width</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>Limits player X position to the maximum screen X position.</comment>
-                        <event-block sid="6538463063075924">
-                            <conditions>
-                                <condition id="-1" name="Compare X" sid="93315604865813" type="Player">
-                                    <param id="0" name="Comparison">5</param>
-                                    <param id="1" name="X co-ordinate">ViewportRight(&quot;Game&quot;) - Player.Width</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-1" name="Set X" sid="5911146327369124" type="Player">
-                                    <param id="0" name="X">ViewportRight(&quot;Game&quot;) - Player.Width</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
+                <comment>Destroys messages with no parents.</comment>
+                <event-block sid="7520501736403156">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="510134340223843" type="System">
+                            <param id="0" name="Object">Message</param>
+                        </condition>
+                        <condition id="-31" inverted="1" name="Object UID exists" sid="3354542508523764" type="System">
+                            <param id="0" name="UID">Message.ParentUID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6133412514460238" type="Message" />
+                    </actions>
+                </event-block>
+                <comment>Show Title on Area Change</comment>
+                <event-block sid="2133060184128916">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="4048158893605474" type="Area">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5266404195530578" type="System">
+                            <param id="0" name="Object to create">AreaTitle</param>
+                            <param id="1" name="Layer">&quot;HUD&quot;</param>
+                            <param id="2" name="X">0</param>
+                            <param id="3" name="Y">WindowHeight / 3</param>
+                        </action>
+                        <action id="0" name="Set text" sid="5217413492734832" type="AreaTitle">
+                            <param id="0" name="Text">Area.RegionName</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group collapsed="1" description="Score, lives, survivors, high score..." sid="7790449752168308" title="Game Data">
@@ -631,6 +632,38 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-group collapsed="1" description="Player positioning events." sid="31258596315872" title="Player Positioning">
+                    <sub-events>
+                        <comment>Limits player X position to the minimum screen X position.</comment>
+                        <event-block sid="4919757083946753">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="8374351068520703" type="Player">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="X co-ordinate">ViewportLeft(&quot;Game&quot;) + Player.Width</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="8407080807855817" type="Player">
+                                    <param id="0" name="X">ViewportLeft(&quot;Game&quot;) + Player.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Limits player X position to the maximum screen X position.</comment>
+                        <event-block sid="6538463063075924">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="93315604865813" type="Player">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="X co-ordinate">ViewportRight(&quot;Game&quot;) - Player.Width</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="5911146327369124" type="Player">
+                                    <param id="0" name="X">ViewportRight(&quot;Game&quot;) - Player.Width</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-group collapsed="1" description="Survivor Visibility events." sid="9882614110388473" title="Survivor Visibility">
                     <sub-events>
                         <comment>If there is at least one survivor, show the driver.</comment>
