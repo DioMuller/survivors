@@ -22,7 +22,7 @@
         <variable comment="Game Over text." constant="0" name="GameOverMessage" sid="817006397110685" static="0" type="text">You died before finding a way out of the apocalypse.</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
-        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">1</variable>
+        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">0</variable>
         <variable comment="Do the Tentacle plants follow the boss?" constant="0" name="TentaclePlantsFollow" sid="1553826641715439" static="0" type="number">0</variable>
         <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
@@ -495,7 +495,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Score, lives, survivors, high score..." sid="7790449752168308" title="Game Data">
+        <event-group description="Score, lives, survivors, high score..." sid="7790449752168308" title="Game Data">
             <sub-events>
                 <comment>Creates High Score, if it doesn&apos;t exist.</comment>
                 <event-block sid="8139995756458101">
@@ -551,9 +551,21 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Initializes Game Over message.</comment>
+                <event-block sid="9279918295095664">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="6926438677093906" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2808790472746885" type="System">
+                            <param id="0" name="Variable">GameOverMessage</param>
+                            <param id="1" name="Value">&quot;You died before finding a way out of the apocalypse.&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="HUD events and updates." sid="7836260230105831" title="HUD">
+        <event-group collapsed="1" description="HUD events and updates." sid="7836260230105831" title="HUD">
             <sub-events>
                 <comment>Updates score and high score on HUD.</comment>
                 <event-block sid="8430060814907466">
@@ -568,7 +580,7 @@
                             <param id="0" name="Width">192 * (Boss.HP / 80)</param>
                         </action>
                         <action id="-5" name="Set width" sid="8039087741017168" type="TimeBar">
-                            <param id="0" name="Width">192 * ((Camera.X - BossLimiter.X) / (Turn.X - BossLimiter.X))</param>
+                            <param id="0" name="Width">192 * min(((Boss.X - BossLimiter.X) / (Turn.X - BossLimiter.X)),1)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -601,6 +613,23 @@
                         <action id="4" name="Set animation" sid="5146550008357141" type="SurvivorHUD">
                             <param id="0" name="Animation">&quot;None&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Flashes time bar near the end.</comment>
+                <event-block sid="1419435153041671">
+                    <conditions>
+                        <condition id="-5" name="Compare width" sid="9894475671783644" type="TimeBar">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Width">20</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="1107627506178758" type="TimeBar" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="1100419029076326" type="TimeBar">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
                         </action>
                     </actions>
                 </event-block>
