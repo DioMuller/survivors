@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Enemies</name>
     <events>
-        <event-group description="Generic Enemy events." sid="8776089849661433" title="General">
+        <event-group collapsed="1" description="Generic Enemy events." sid="8776089849661433" title="General">
             <sub-events>
                 <comment>Bullets hit enemy, if the enemy is not flashing.</comment>
                 <event-block sid="8975109783393405">
@@ -301,7 +301,7 @@
             </sub-events>
         </event-group>
         <event-group description="The zombie is a slow, dumb and weak enemy. It walks in the direction of the player, when the player enters his field of view." sid="6695857086812331" title="Zombie" />
-        <event-group collapsed="1" description="The spitter is an enemy with decent resistence, but no movement. It rotates in a predefined arc, and spits a projectile at fixed time span." sid="8254302292856625" title="Spitter">
+        <event-group description="The spitter is an enemy with decent resistence, but no movement. It rotates in a predefined arc, and spits a projectile at fixed time span." sid="8254302292856625" title="Spitter">
             <sub-events>
                 <comment>Spitter Parameters</comment>
                 <variable comment="Spitter enemy max rotation." constant="0" name="SpitterMaxRotation" sid="7438655777303651" static="0" type="number">15</variable>
@@ -361,7 +361,7 @@
                             <param id="2" name="Image point">&quot;ShootPoint&quot;</param>
                         </action>
                         <action id="-18" name="Rotate clockwise" sid="4009726173115719" type="EnemyShoot">
-                            <param id="0" name="Degrees">180 + Spitter.Rotation</param>
+                            <param id="0" name="Degrees">180 + Spitter.Rotation + ((Spitter.X &lt; Player.X) ? 180 : 0)</param>
                         </action>
                         <action id="0" name="Play" sid="3697617670693352" type="Audio">
                             <param id="0" name="Audio file">Spit</param>
@@ -578,6 +578,11 @@
                             <param id="1" name="Comparison">1</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="2219621888028207" type="System">
+                            <param id="0" name="Variable">TentaclePlantsFollow</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-1" name="Set X" sid="9267260152554409" type="TentaclePlant">
@@ -611,6 +616,31 @@
                         <action id="-21" name="Reset global variables" sid="6510939195434482" type="System" />
                         <action id="-2" name="Go to layout" sid="2236224347063076" type="System">
                             <param id="0" name="Layout">Win</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Shoots each X seconds.</comment>
+                <event-block sid="7465310033141754">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="7824204044553717" type="MainTentacle" />
+                        <condition id="-6" name="Every X seconds" sid="4603525038330132" type="System">
+                            <param id="0" name="Interval (seconds)">0.3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="8511698283465312" type="MainTentacle">
+                            <param id="0" name="Object">EnemyShoot</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;ShootPoint&quot;</param>
+                        </action>
+                        <action id="-18" name="Rotate clockwise" sid="166064655735541" type="EnemyShoot">
+                            <param id="0" name="Degrees">180 + random(-45,46) + ((MainTentacle.X &lt; Player.X) ? 180 : 0)</param>
+                        </action>
+                        <action id="0" name="Play" sid="5622899331580957" type="Audio">
+                            <param id="0" name="Audio file">Spit</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>

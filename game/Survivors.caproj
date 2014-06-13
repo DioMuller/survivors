@@ -315,6 +315,52 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="GasCanister" sid="3513039676300963">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="2779427387008339">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3140060748936242" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.78125" y="0.21875" />
+                                <point x="0.96875" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.0625" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ToxicWaste" sid="656122549491958">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="6546879106664122">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9736885169834045" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.03125" />
+                                <point x="0.75" y="0.25" />
+                                <point x="0.75" y="0.5" />
+                                <point x="0.875" y="0.875" />
+                                <point x="0.5" y="0.9375" />
+                                <point x="0.25" y="0.75" />
+                                <point x="0.21875" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder expanded="1" name="Background">
             <object-type name="ParallaxBG" sid="2664570612329269">
@@ -406,6 +452,7 @@
                     <animation-folder expanded="1">
                         <animation framecount="5" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="4688037160294774" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="Shootpoint" x="0.125" y="0.2625" />
                                 <collision-poly>
                                     <point x="0.158333" y="0.2375" />
                                     <point x="0.3625" y="0.221875" />
@@ -418,6 +465,7 @@
                                 </collision-poly>
                             </frame>
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="Shootpoint" x="0.0291667" y="0.328125" />
                                 <collision-poly>
                                     <point x="0.0583333" y="0.303125" />
                                     <point x="0.2375" y="0.328125" />
@@ -429,6 +477,7 @@
                                 </collision-poly>
                             </frame>
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="Shootpoint" x="0.00416667" y="0.409375" />
                                 <collision-poly>
                                     <point x="0.00833332" y="0.40625" />
                                     <point x="0.304167" y="0.428125" />
@@ -439,6 +488,7 @@
                                 </collision-poly>
                             </frame>
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="Shootpoint" x="0.0125" y="0.528125" />
                                 <collision-poly>
                                     <point x="0.491667" y="0.56875" />
                                     <point x="0.708333" y="0.540625" />
@@ -450,6 +500,7 @@
                                 </collision-poly>
                             </frame>
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <image-point name="Shootpoint" x="-0.00416667" y="0.621875" />
                                 <collision-poly>
                                     <point x="0.745833" y="0.565625" />
                                     <point x="0.00833333" y="0.584375" />
@@ -918,6 +969,13 @@
                     <behavior id="Flash" />
                 </behavior-type>
             </behaviors>
+        </family>
+        <family name="Obstacles" plugin-id="Sprite" sid="3808314949271039">
+            <members>
+                <member>Crate</member>
+                <member>GasCanister</member>
+                <member>ToxicWaste</member>
+            </members>
         </family>
     </families>
     <layout-folder expanded="1">

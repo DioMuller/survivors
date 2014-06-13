@@ -22,8 +22,9 @@
         <variable comment="Game Over text." constant="0" name="GameOverMessage" sid="817006397110685" static="0" type="text">You died before finding a way out of the apocalypse.</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
-        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">0</variable>
-        <event-group description="Player controller events." sid="7495863798319145" title="Controller">
+        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">1</variable>
+        <variable comment="Do the Tentacle plants follow the boss?" constant="0" name="TentaclePlantsFollow" sid="1553826641715439" static="0" type="number">0</variable>
+        <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
                 <event-block any="1" sid="5839817289045311">
@@ -240,7 +241,7 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
+        <event-group description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
             <sub-events>
                 <comment>Destroys shot outside of screen.</comment>
                 <event-block sid="5269143083626051">
@@ -353,6 +354,29 @@
                             <param id="1" name="Layer">&quot;Game&quot;</param>
                             <param id="2" name="Image point">0</param>
                         </action>
+                    </actions>
+                </event-block>
+                <comment>Destroy the projectile on collision with obstacles.</comment>
+                <event-block sid="1056063428643147">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="9272582080253304" type="PlayerProjectile">
+                            <param id="0" name="Object">Obstacles</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3069175683525139" type="PlayerProjectile" />
+                    </actions>
+                </event-block>
+                <comment>Destroy the projectile on collision with enemy shots.</comment>
+                <event-block sid="9804278561975461">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8983487536509809" type="PlayerProjectile">
+                            <param id="0" name="Object">EnemyShoot</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1666424002840871" type="PlayerProjectile" />
+                        <action id="-9" name="Destroy" sid="7102065217954612" type="EnemyShoot" />
                     </actions>
                 </event-block>
             </sub-events>

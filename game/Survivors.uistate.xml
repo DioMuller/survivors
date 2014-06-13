@@ -32,5 +32,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="PlayerPart" />
         <family expanded="0" name="BossPart" />
         <family expanded="0" name="BossFull" />
+        <family expanded="0" name="Obstacles" />
     </families-expanded>
 </c2uistate>
