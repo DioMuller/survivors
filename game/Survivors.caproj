@@ -82,7 +82,7 @@
                 <plugin id="Function" />
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Helper">
+        <object-folder expanded="0" name="Helper">
             <object-type name="Camera" sid="1323660039230511">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -166,7 +166,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Objects">
+        <object-folder expanded="1" name="Objects">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -383,8 +383,8 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Enemies">
-            <object-folder expanded="1" name="Boss">
+        <object-folder expanded="0" name="Enemies">
+            <object-folder expanded="0" name="Boss">
                 <object-type name="Tentacle02" sid="1584663686165809">
                     <plugin id="Sprite" />
                     <animation-folder expanded="1">
@@ -941,6 +941,7 @@
             </members>
             <instance-variables>
                 <instance-variable comment="Sound file name." name="SoundFile" sid="9341537387232256" type="string" />
+                <instance-variable comment="Projectile Strength." name="Strength" sid="9887936857621863" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Bullet" sid="7859772575401748">

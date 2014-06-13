@@ -19,7 +19,7 @@
                     <actions>
                         <action id="-12" name="Subtract from" sid="9297251914034745" type="Enemy">
                             <param id="0" name="Instance variable">HP</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">PlayerProjectile.Strength</param>
                         </action>
                         <action behavior="Flash" id="0" name="Flash" sid="4025536948330121" type="Enemy">
                             <param id="0" name="&apos;On&apos; time">0.1</param>
@@ -176,7 +176,7 @@
                     <actions>
                         <action id="-12" name="Subtract from" sid="4163441083654715" type="Enemy">
                             <param id="0" name="Instance variable">HP</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">3</param>
                         </action>
                     </actions>
                 </event-block>
@@ -405,7 +405,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="The bomber is a suicidal enemy, with low health. If it is hit, or hits the player, it explodes." sid="2677203614364159" title="Bomber">
+        <event-group collapsed="1" description="The bomber is a suicidal enemy, with low health. If it is hit, or hits the player, it explodes." sid="2677203614364159" title="Bomber">
             <sub-events>
                 <comment>If the bomber is dead, it stops... AND EXPLODES.</comment>
                 <event-block any="1" sid="96364981964065">
@@ -532,7 +532,7 @@
                     <actions>
                         <action id="-12" name="Subtract from" sid="5336163246206158" type="BossFull">
                             <param id="0" name="Instance variable">HP</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">PlayerProjectile.Strength</param>
                         </action>
                         <action behavior="Flash" id="0" name="Flash" sid="4116598819118124" type="BossFull">
                             <param id="0" name="&apos;On&apos; time">0.1</param>
@@ -627,7 +627,7 @@
                     <actions>
                         <action id="-12" name="Subtract from" sid="5649810245912595" type="BossFull">
                             <param id="0" name="Instance variable">HP</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">3</param>
                         </action>
                     </actions>
                 </event-block>
