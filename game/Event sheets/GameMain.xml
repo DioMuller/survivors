@@ -22,8 +22,8 @@
         <variable comment="Game Over text." constant="0" name="GameOverMessage" sid="817006397110685" static="0" type="text">You died before finding a way out of the apocalypse.</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
-        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">1</variable>
-        <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
+        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">0</variable>
+        <event-group description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
                 <event-block any="1" sid="5839817289045311">
@@ -142,7 +142,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-group collapsed="1" description="Turret position shift events." sid="8827348926521787" title="Turret Shift">
+                <event-group description="Turret position shift events." sid="8827348926521787" title="Turret Shift">
                     <sub-events>
                         <variable comment="Has the player shifted the turret recently?" constant="0" name="HasShifted" sid="3785510696946602" static="1" type="number">0</variable>
                         <comment>Shifts turret position</comment>
@@ -213,6 +213,10 @@
                                 <action id="7" name="Set mirrored" sid="6498631559777619" type="Turret">
                                     <param id="0" name="State">0</param>
                                 </action>
+                                <action id="4" name="Set animation" sid="3207516795900203" type="TurretShooter">
+                                    <param id="0" name="Animation">&quot;Mirrored&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <comment>Unmirrors the turret, if the turret is not inverted.</comment>
@@ -225,6 +229,10 @@
                             <actions>
                                 <action id="7" name="Set mirrored" sid="3285280357650137" type="Turret">
                                     <param id="0" name="State">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="3220382679222902" type="TurretShooter">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -638,7 +646,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Player events." sid="1027178941590517" title="Player">
+        <event-group collapsed="1" description="Player events." sid="1027178941590517" title="Player">
             <sub-events>
                 <comment>If the player has no survivors left, restart the game.</comment>
                 <event-block sid="8955538910618842">

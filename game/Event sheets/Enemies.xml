@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Enemies</name>
     <events>
-        <event-group collapsed="1" description="Generic Enemy events." sid="8776089849661433" title="General">
+        <event-group description="Generic Enemy events." sid="8776089849661433" title="General">
             <sub-events>
                 <comment>Bullets hit enemy, if the enemy is not flashing.</comment>
                 <event-block sid="8975109783393405">
@@ -415,7 +415,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="The divider creates new small enemies when it is hit." sid="2112679300905023" title="Divider">
+        <event-group collapsed="1" description="The divider creates new small enemies when it is hit." sid="2112679300905023" title="Divider">
             <sub-events>
                 <comment>Creates small spawns when is hit.</comment>
                 <event-block sid="8389031813490296">
