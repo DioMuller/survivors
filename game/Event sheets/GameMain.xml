@@ -18,9 +18,11 @@
         <variable comment="Camera (and character following it) speed." constant="0" name="CameraSpeed" sid="3644210586740942" static="0" type="number">100</variable>
         <variable comment="Dramatic pause time (pauses the game when enemy dies)" constant="0" name="DramaticPauseTime" sid="8911201919267045" static="0" type="number">0.1</variable>
         <variable comment="Maximum number of Survivors" constant="0" name="SurvivorLimit" sid="4181269206356635" static="0" type="number">5</variable>
+        <comment>Messages</comment>
+        <variable comment="Game Over text." constant="0" name="GameOverMessage" sid="817006397110685" static="0" type="text">You died before finding a way out of the apocalypse.</variable>
         <comment>Flags</comment>
         <variable comment="Show Debug Layer?" constant="0" name="ShowDebug" sid="4447915718697695" static="0" type="number">0</variable>
-        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">0</variable>
+        <variable comment="Is the player invincible?" constant="0" name="PlayerInvincible" sid="6336900665704623" static="0" type="number">1</variable>
         <event-group collapsed="1" description="Player controller events." sid="7495863798319145" title="Controller">
             <sub-events>
                 <comment>Shots when the shot key is pressed (considering the delay)</comment>
@@ -515,7 +517,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="HUD events and updates." sid="7836260230105831" title="HUD">
+        <event-group collapsed="1" description="HUD events and updates." sid="7836260230105831" title="HUD">
             <sub-events>
                 <comment>Updates score and high score on HUD.</comment>
                 <event-block sid="8430060814907466">
@@ -562,7 +564,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="Survivor pickup events." sid="3814513092485815" title="Survivor">
+        <event-group collapsed="1" description="Survivor pickup events." sid="3814513092485815" title="Survivor">
             <sub-events>
                 <comment>Survivor pickup.</comment>
                 <event-block sid="7520839760438962">
@@ -636,7 +638,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="Player events." sid="1027178941590517" title="Player">
+        <event-group description="Player events." sid="1027178941590517" title="Player">
             <sub-events>
                 <comment>If the player has no survivors left, restart the game.</comment>
                 <event-block sid="8955538910618842">
@@ -649,6 +651,10 @@
                     </conditions>
                     <actions>
                         <action id="-21" name="Reset global variables" sid="4439566014908862" type="System" />
+                        <action id="-9" name="Set value" sid="7848993769441709" type="System">
+                            <param id="0" name="Variable">GameOverMessage</param>
+                            <param id="1" name="Value">&quot;You died before finding a way out of the apocalypse.&quot;</param>
+                        </action>
                         <action id="-2" name="Go to layout" sid="313431051770468" type="System">
                             <param id="0" name="Layout">GameOver</param>
                         </action>

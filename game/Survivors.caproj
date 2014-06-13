@@ -155,8 +155,16 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="BossLimiter" sid="2052885668107892">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9596188786613812" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Objects">
+        <object-folder expanded="1" name="Objects">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -282,6 +290,30 @@
                     <instance-variable comment="Message instance parent UID." name="ParentUID" sid="8795755451140365" type="number" />
                 </instance-variables>
                 <texture />
+            </object-type>
+            <object-type name="Crate" sid="9116311241492187">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="5707232776758434">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3648626457487553" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.1875" y="0.1875" />
+                                <point x="0.5" y="0.09375" />
+                                <point x="0.78125" y="0.21875" />
+                                <point x="0.8125" y="0.5" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.5" y="0.90625" />
+                                <point x="0.21875" y="0.78125" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-folder expanded="1" name="Background">
@@ -630,6 +662,42 @@
                 </behaviors>
                 <texture />
             </object-type>
+            <object-type name="SurvivorHUD" sid="4505191275404592">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable comment="How many survivors are needed for this count to lit." name="SurvivorCount" sid="363273119222882" type="number" />
+                </instance-variables>
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3726739178427175" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.09375" />
+                                <point x="0.78125" y="0.21875" />
+                                <point x="0.9375" y="0.5" />
+                                <point x="0.78125" y="0.78125" />
+                                <point x="0.5" y="0.875" />
+                                <point x="0.1875" y="0.8125" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="None" pingpong="0" repeatcount="1" repeatto="0" sid="6306783911407385" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.21875" y="0.21875" />
+                                <point x="0.5" y="0.09375" />
+                                <point x="0.78125" y="0.21875" />
+                                <point x="0.9375" y="0.5" />
+                                <point x="0.78125" y="0.78125" />
+                                <point x="0.5" y="0.875" />
+                                <point x="0.1875" y="0.8125" />
+                                <point x="0.09375" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder expanded="0" name="Player">
             <object-type name="Player" sid="7862889593201915">
@@ -732,43 +800,11 @@
                 </effects>
                 <texture />
             </object-type>
+            <object-type name="GameOverFont" sid="3421668497051567">
+                <plugin id="Spritefont2" />
+                <texture />
+            </object-type>
         </object-folder>
-        <object-type name="SurvivorHUD" sid="4505191275404592">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable comment="How many survivors are needed for this count to lit." name="SurvivorCount" sid="363273119222882" type="number" />
-            </instance-variables>
-            <animation-folder expanded="1">
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3726739178427175" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.21875" y="0.21875" />
-                            <point x="0.5" y="0.09375" />
-                            <point x="0.78125" y="0.21875" />
-                            <point x="0.9375" y="0.5" />
-                            <point x="0.78125" y="0.78125" />
-                            <point x="0.5" y="0.875" />
-                            <point x="0.1875" y="0.8125" />
-                            <point x="0.09375" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-                <animation framecount="1" loop="0" name="None" pingpong="0" repeatcount="1" repeatto="0" sid="6306783911407385" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.21875" y="0.21875" />
-                            <point x="0.5" y="0.09375" />
-                            <point x="0.78125" y="0.21875" />
-                            <point x="0.9375" y="0.5" />
-                            <point x="0.78125" y="0.78125" />
-                            <point x="0.5" y="0.875" />
-                            <point x="0.1875" y="0.8125" />
-                            <point x="0.09375" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
     </object-folder>
     <families>
         <family name="Enemy" plugin-id="Sprite" sid="2931763109160961">
@@ -885,6 +921,7 @@
         <layout>Game.xml</layout>
         <layout>GameOver.xml</layout>
         <layout>Title.xml</layout>
+        <layout>Win.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
         <event-sheet>GameMain.xml</event-sheet>

@@ -21,5 +21,16 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Changes Game Over message text.</comment>
+        <event-block sid="4768464071195546">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5741533456766424" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="3006279178879068" type="GameOverFont">
+                    <param id="0" name="Text">GameOverMessage</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
