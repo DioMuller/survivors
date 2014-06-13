@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Enemies</name>
     <events>
-        <event-group collapsed="1" description="Generic Enemy events." sid="8776089849661433" title="General">
+        <event-group description="Generic Enemy events." sid="8776089849661433" title="General">
             <sub-events>
                 <comment>Bullets hit enemy, if the enemy is not flashing.</comment>
                 <event-block sid="8975109783393405">
@@ -41,6 +41,38 @@
                             <param id="0" name="X">Enemy.X - ((PlayerProjectile.X &lt;Enemy.X ?  -1 : 1) * Enemy.KnockbackModifier)</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <comment>Splash blood when hit.</comment>
+                        <event-block sid="5359290046074315">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="4985446052251044" type="BloodSplasher">
+                                    <param id="0" name="Unique ID">Enemy.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="3289923092696205" type="PlayerProjectile">
+                                    <param id="0" name="Object">Gore</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="7163507751638364" type="Gore">
+                                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">BloodSplasher.ColorRed</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="9760590487087293" type="Gore">
+                                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                    <param id="1" name="Parameter index">1</param>
+                                    <param id="2" name="Value">BloodSplasher.ColorGreen</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="5348917069917814" type="Gore">
+                                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                    <param id="1" name="Parameter index">2</param>
+                                    <param id="2" name="Value">BloodSplasher.ColorBlue</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>If enemy has no HP, it dies.</comment>
                 <event-block sid="5572807431718024">
@@ -301,7 +333,7 @@
             </sub-events>
         </event-group>
         <event-group description="The zombie is a slow, dumb and weak enemy. It walks in the direction of the player, when the player enters his field of view." sid="6695857086812331" title="Zombie" />
-        <event-group description="The spitter is an enemy with decent resistence, but no movement. It rotates in a predefined arc, and spits a projectile at fixed time span." sid="8254302292856625" title="Spitter">
+        <event-group collapsed="1" description="The spitter is an enemy with decent resistence, but no movement. It rotates in a predefined arc, and spits a projectile at fixed time span." sid="8254302292856625" title="Spitter">
             <sub-events>
                 <comment>Spitter Parameters</comment>
                 <variable comment="Spitter enemy max rotation." constant="0" name="SpitterMaxRotation" sid="7438655777303651" static="0" type="number">15</variable>
@@ -452,7 +484,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="The boss is a big octopus that runs to the player base." sid="468630034715306" title="Boss">
+        <event-group collapsed="1" description="The boss is a big octopus that runs to the player base." sid="468630034715306" title="Boss">
             <sub-events>
                 <comment>The boss parts will follow the boss.</comment>
                 <event-block sid="8224511202679279">
@@ -510,6 +542,38 @@
                             <param id="7" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <comment>Splash blood when hit.</comment>
+                        <event-block sid="9304699774768717">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="2619366312310851" type="BloodSplasher">
+                                    <param id="0" name="Unique ID">BossFull.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="4393050021670374" type="PlayerProjectile">
+                                    <param id="0" name="Object">Gore</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="9062787946907655" type="Gore">
+                                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">BloodSplasher.ColorRed</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="7712747671212595" type="Gore">
+                                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                    <param id="1" name="Parameter index">1</param>
+                                    <param id="2" name="Value">BloodSplasher.ColorGreen</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="4773460165273438" type="Gore">
+                                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                    <param id="1" name="Parameter index">2</param>
+                                    <param id="2" name="Value">BloodSplasher.ColorBlue</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>If enemy has no HP, it dies.</comment>
                 <event-block sid="9291396810515527">

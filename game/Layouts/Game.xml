@@ -390,6 +390,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -435,6 +438,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -599,6 +605,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -656,6 +665,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -759,6 +771,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -830,6 +845,9 @@
                         <AudioOnSee>Divider_see</AudioOnSee>
                         <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -885,6 +903,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -940,6 +961,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -995,6 +1019,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1050,6 +1077,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1105,6 +1135,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1160,6 +1193,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1215,6 +1251,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1270,6 +1309,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1325,6 +1367,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1380,6 +1425,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1435,6 +1483,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1490,6 +1541,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1545,6 +1599,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1600,6 +1657,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1655,6 +1715,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1710,6 +1773,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1765,6 +1831,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1820,6 +1889,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1875,6 +1947,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1930,6 +2005,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1985,6 +2063,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2040,6 +2121,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2095,6 +2179,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2150,6 +2237,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2205,6 +2295,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2260,6 +2353,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2315,6 +2411,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2370,6 +2469,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2425,6 +2527,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2480,6 +2585,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2535,6 +2643,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2590,6 +2701,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2645,6 +2759,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -2702,6 +2819,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -2759,6 +2879,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -2816,6 +2939,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -2873,6 +2999,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -2930,6 +3059,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -2985,6 +3117,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3040,6 +3175,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3095,6 +3233,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3150,6 +3291,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3205,6 +3349,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3260,6 +3407,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3480,6 +3630,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3535,6 +3688,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3590,6 +3746,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3645,6 +3804,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3700,6 +3862,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3755,6 +3920,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3810,6 +3978,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3865,6 +4036,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -3920,6 +4094,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -3977,6 +4154,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -4034,6 +4214,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -4091,6 +4274,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -4148,6 +4334,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -4205,6 +4394,9 @@
                         <AudioOnSee></AudioOnSee>
                         <AudioOnDead></AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                         <Rotation>0</Rotation>
                         <RotationDifference>1</RotationDifference>
                     </instance-variables>
@@ -4262,6 +4454,9 @@
                         <AudioOnSee>Divider_see</AudioOnSee>
                         <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4317,6 +4512,9 @@
                         <AudioOnSee>Divider_see</AudioOnSee>
                         <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4372,6 +4570,9 @@
                         <AudioOnSee>Divider_see</AudioOnSee>
                         <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4427,6 +4628,9 @@
                         <AudioOnSee>Divider_see</AudioOnSee>
                         <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4472,6 +4676,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -4533,6 +4740,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -4604,6 +4814,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4659,6 +4872,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4714,6 +4930,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4769,6 +4988,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4824,6 +5046,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4879,6 +5104,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4934,6 +5162,9 @@
                         <AudioOnSee>Zombie_See</AudioOnSee>
                         <AudioOnDead>Zombie_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -4979,6 +5210,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -5040,6 +5274,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -5101,6 +5338,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -5162,6 +5402,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -5223,6 +5466,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -5284,6 +5530,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -5345,6 +5594,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -5561,6 +5813,9 @@
                         <AudioOnSee>Divider_see</AudioOnSee>
                         <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -5616,6 +5871,9 @@
                         <AudioOnSee>Divider_see</AudioOnSee>
                         <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -5671,6 +5929,9 @@
                         <AudioOnSee>Divider_see</AudioOnSee>
                         <AudioOnDead>Divider_Dead</AudioOnDead>
                         <UpdateTime>0.1</UpdateTime>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>100</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -6027,6 +6288,54 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Gore" uid="186">
+                    <properties>
+                        <rate>50</rate>
+                        <spray-cone>360</spray-cone>
+                        <type>One-shot</type>
+                        <initial-particle-properties></initial-particle-properties>
+                        <speed>200</speed>
+                        <size>8</size>
+                        <opacity>100</opacity>
+                        <grow-rate>0</grow-rate>
+                        <x-randomiser>0</x-randomiser>
+                        <y-randomiser>0</y-randomiser>
+                        <speed-randomiser->0</speed-randomiser->
+                        <size-randomiser>0</size-randomiser>
+                        <grow-rate-randomiser>0</grow-rate-randomiser>
+                        <particle-lifetime-properties></particle-lifetime-properties>
+                        <acceleration>-150</acceleration>
+                        <gravity>500</gravity>
+                        <angle-randomiser>0</angle-randomiser>
+                        <speed-randomiser>800</speed-randomiser>
+                        <opacity-randomiser>0</opacity-randomiser>
+                        <destroy-mode>Fade to invisible</destroy-mode>
+                        <timeout>0.5</timeout>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="SetColor">
+                            <parameters>
+                                <blue>0</blue>
+                                <green>0</green>
+                                <red>1</red>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>592</x>
+                        <y>-240</y>
+                        <z>0</z>
+                        <width>128</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -6212,6 +6521,9 @@
                     <instance-variables>
                         <HP>80</HP>
                         <Points>1000</Points>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>100</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -6251,6 +6563,9 @@
                     <instance-variables>
                         <HP>50</HP>
                         <Points>250</Points>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>100</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -6280,6 +6595,9 @@
                     <instance-variables>
                         <HP>20</HP>
                         <Points>100</Points>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>100</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -6309,6 +6627,9 @@
                     <instance-variables>
                         <HP>30</HP>
                         <Points>150</Points>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>100</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -6338,6 +6659,9 @@
                     <instance-variables>
                         <HP>20</HP>
                         <Points>100</Points>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>100</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <DistanceFromBoss>0</DistanceFromBoss>
                     </instance-variables>
                     <behavior-instances>
@@ -6381,6 +6705,9 @@
                     <instance-variables>
                         <HP>20</HP>
                         <Points>100</Points>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>100</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <DistanceFromBoss>0</DistanceFromBoss>
                     </instance-variables>
                     <behavior-instances>
@@ -6457,6 +6784,9 @@
                     <instance-variables>
                         <HP>20</HP>
                         <Points>100</Points>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>100</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <DistanceFromBoss>0</DistanceFromBoss>
                     </instance-variables>
                     <behavior-instances>
@@ -6500,6 +6830,9 @@
                     <instance-variables>
                         <HP>20</HP>
                         <Points>100</Points>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>100</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <DistanceFromBoss>0</DistanceFromBoss>
                     </instance-variables>
                     <behavior-instances>
@@ -6543,6 +6876,9 @@
                     <instance-variables>
                         <HP>20</HP>
                         <Points>100</Points>
+                        <ColorRed>0</ColorRed>
+                        <ColorGreen>100</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <DistanceFromBoss>0</DistanceFromBoss>
                     </instance-variables>
                     <behavior-instances>

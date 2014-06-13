@@ -649,6 +649,38 @@
                             <param id="2" name="Duration">1.0</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <comment>Splash blood when hit.</comment>
+                        <event-block sid="6418966142165138">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="2421351124944112" type="BloodSplasher">
+                                    <param id="0" name="Unique ID">Survivor.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="747027655827449" type="PlayerProjectile">
+                                    <param id="0" name="Object">Gore</param>
+                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="398873830739132" type="Gore">
+                                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">BloodSplasher.ColorRed</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="7025933543886247" type="Gore">
+                                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                    <param id="1" name="Parameter index">1</param>
+                                    <param id="2" name="Value">BloodSplasher.ColorGreen</param>
+                                </action>
+                                <action id="-28" name="Set effect parameter" sid="2865992318555477" type="Gore">
+                                    <param id="0" name="Effect">&quot;SetColor&quot;</param>
+                                    <param id="1" name="Parameter index">2</param>
+                                    <param id="2" name="Value">BloodSplasher.ColorBlue</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>If the survivor has no health remaining, it turns into a zombie.</comment>
                 <event-block sid="6717507944329868">

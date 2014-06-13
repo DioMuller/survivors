@@ -35,6 +35,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -63,6 +66,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -91,6 +97,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -119,6 +128,9 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <ColorRed>100</ColorRed>
+                        <ColorGreen>0</ColorGreen>
+                        <ColorBlue>0</ColorBlue>
                         <HP>3</HP>
                     </instance-variables>
                     <behavior-instances>
@@ -242,7 +254,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <NextLayout>Game</NextLayout>
+                        <NextLayout>Title</NextLayout>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>

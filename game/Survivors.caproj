@@ -15,6 +15,7 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -36,6 +37,7 @@
         <effect author="Scirra" id="gamma">Gamma</effect>
         <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
         <effect author="Scirra" id="noise">Noise</effect>
+        <effect author="Scirra" id="setcolor">Set color</effect>
     </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
@@ -164,7 +166,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Objects">
+        <object-folder expanded="0" name="Objects">
             <object-type name="Cartidge" sid="8727708591988428">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -362,7 +364,7 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-folder expanded="1" name="Background">
+        <object-folder expanded="0" name="Background">
             <object-type name="ParallaxBG" sid="2664570612329269">
                 <plugin id="TiledBg" />
                 <texture />
@@ -372,8 +374,8 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Enemies">
-            <object-folder expanded="0" name="Boss">
+        <object-folder expanded="1" name="Enemies">
+            <object-folder expanded="1" name="Boss">
                 <object-type name="Tentacle02" sid="1584663686165809">
                     <plugin id="Sprite" />
                     <animation-folder expanded="1">
@@ -859,6 +861,15 @@
                 <texture />
             </object-type>
         </object-folder>
+        <object-type name="Gore" sid="6799047395828555">
+            <plugin id="Particles" />
+            <effects>
+                <effect-type name="SetColor">
+                    <effect id="setcolor" />
+                </effect-type>
+            </effects>
+            <texture />
+        </object-type>
     </object-folder>
     <families>
         <family name="Enemy" plugin-id="Sprite" sid="2931763109160961">
@@ -976,6 +987,25 @@
                 <member>GasCanister</member>
                 <member>ToxicWaste</member>
             </members>
+        </family>
+        <family name="BloodSplasher" plugin-id="Sprite" sid="5354848258901244">
+            <members>
+                <member>Boss</member>
+                <member>Divider</member>
+                <member>MainTentacle</member>
+                <member>Spawn</member>
+                <member>Spitter</member>
+                <member>Survivor</member>
+                <member>Tentacle01</member>
+                <member>Tentacle02</member>
+                <member>TentaclePlant</member>
+                <member>Zombie</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="Red component of blood color." name="ColorRed" sid="7384822034827536" type="number" />
+                <instance-variable comment="Green component of blood color." name="ColorGreen" sid="2214633664594974" type="number" />
+                <instance-variable comment="Blue component of blood color." name="ColorBlue" sid="5448183155961357" type="number" />
+            </instance-variables>
         </family>
     </families>
     <layout-folder expanded="1">

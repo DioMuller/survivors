@@ -12,9 +12,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout>GameOver</layout>
         <layout>Title</layout>
-        <layout active="1">Game</layout>
+        <layout>Game</layout>
         <layout>Win</layout>
-        <event-sheet>GameMain</event-sheet>
+        <event-sheet active="1">GameMain</event-sheet>
         <event-sheet>Enemies</event-sheet>
         <event-sheet>Screens</event-sheet>
         <event-sheet>General</event-sheet>
@@ -33,5 +33,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="BossPart" />
         <family expanded="0" name="BossFull" />
         <family expanded="0" name="Obstacles" />
+        <family expanded="0" name="BloodSplasher" />
     </families-expanded>
 </c2uistate>
