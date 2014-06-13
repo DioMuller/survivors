@@ -241,7 +241,7 @@
                 </event-group>
             </sub-events>
         </event-group>
-        <event-group description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
+        <event-group collapsed="1" description="Normal and special shot events, and extra shooting events, like cartidges." sid="2480136762700605" title="Shot events">
             <sub-events>
                 <comment>Destroys shot outside of screen.</comment>
                 <event-block sid="5269143083626051">
@@ -454,6 +454,10 @@
                         <action behavior="Bullet" id="0" name="Set speed" sid="3601060799785007" type="Boss">
                             <param id="0" name="Speed">-CameraSpeed</param>
                         </action>
+                        <action id="-4" name="Set layer visible" sid="6186030475751041" type="System">
+                            <param id="0" name="Layer">&quot;HUD - Boss&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Destroys messages with no parents.</comment>
@@ -549,7 +553,7 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group collapsed="1" description="HUD events and updates." sid="7836260230105831" title="HUD">
+        <event-group description="HUD events and updates." sid="7836260230105831" title="HUD">
             <sub-events>
                 <comment>Updates score and high score on HUD.</comment>
                 <event-block sid="8430060814907466">
@@ -559,6 +563,12 @@
                     <actions>
                         <action id="0" name="Set text" sid="470229447322066" type="HUDScores">
                             <param id="0" name="Text">&quot;Score: &quot; &amp; Score &amp; &quot;  Hi-Score: &quot; &amp; HighScore</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="9904035166322118" type="BossBar">
+                            <param id="0" name="Width">192 * (Boss.HP / 80)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="8039087741017168" type="TimeBar">
+                            <param id="0" name="Width">192 * ((Camera.X - BossLimiter.X) / (Turn.X - BossLimiter.X))</param>
                         </action>
                     </actions>
                 </event-block>

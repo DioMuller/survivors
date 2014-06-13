@@ -82,7 +82,7 @@
                 <plugin id="Function" />
             </object-type>
         </object-folder>
-        <object-folder expanded="0" name="Helper">
+        <object-folder expanded="1" name="Helper">
             <object-type name="Camera" sid="1323660039230511">
                 <plugin id="Sprite" />
                 <instance-variables>
@@ -115,7 +115,7 @@
                 <plugin id="Sprite" />
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8452128337824142" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -161,7 +161,7 @@
                 <plugin id="Sprite" />
                 <animation-folder expanded="1">
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9596188786613812" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="1" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -362,6 +362,15 @@
                         </frame>
                     </animation>
                 </animation-folder>
+            </object-type>
+            <object-type name="Gore" sid="6799047395828555">
+                <plugin id="Particles" />
+                <effects>
+                    <effect-type name="SetColor">
+                        <effect id="setcolor" />
+                    </effect-type>
+                </effects>
+                <texture />
             </object-type>
         </object-folder>
         <object-folder expanded="0" name="Background">
@@ -751,6 +760,30 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="BarBackground" sid="4578813644707513">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6846587068495246" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TimeBar" sid="5719898571509136">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8383756517963117" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="BossBar" sid="3211834880132849">
+                <plugin id="Sprite" />
+                <animation-folder expanded="1">
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8982124674894853" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder expanded="0" name="Player">
             <object-type name="Player" sid="7862889593201915">
@@ -861,15 +894,6 @@
                 <texture />
             </object-type>
         </object-folder>
-        <object-type name="Gore" sid="6799047395828555">
-            <plugin id="Particles" />
-            <effects>
-                <effect-type name="SetColor">
-                    <effect id="setcolor" />
-                </effect-type>
-            </effects>
-            <texture />
-        </object-type>
     </object-folder>
     <families>
         <family name="Enemy" plugin-id="Sprite" sid="2931763109160961">
